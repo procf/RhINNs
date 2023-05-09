@@ -127,43 +127,43 @@ class PINNSolver():
         self.iter+=1
 
 #function to solve TEVP constitutive ODEs
-def TEVP(params, smax, tmin, tmax, gdot, omega, N_d_ode):
+def TEVP(params, smax, tmin, tmax, sa, omega, N_d_ode):
     G, sy, es, ep, kp, kn = np.array(params)
     def odes(x, t):
         S = x[0]
         L = x[1]
-        dSdt = G/(es+ep)*(-S + sy*L/smax + (es + ep*L)*gdot*np.cos(omega*t)*omega/smax)
-        dLdt = kp*(1 - L) - kn*L*gdot*np.abs(np.cos(omega*t))*omega
+        dSdt = G/(es+ep)*(-S + sy*L/smax + (es + ep*L)*sa*np.cos(omega*t)*omega/smax)
+        dLdt = kp*(1 - L) - kn*L*sa*np.abs(np.cos(omega*t))*omega
         return [dSdt, dLdt]
     x0 = [0.0, 1.]
     t = np.logspace(np.log10(tmin),np.log10(tmax), N_d_ode)
     x = odeint(odes, x0 ,t)
     SS = x[:,0]
     L = x[:,1]
-    SR = gdot*np.ones(N_d_ode)
+    SA = sa*np.ones(N_d_ode)
     W = omega*np.ones(N_d_ode)
-    return t, SR, W, SS, L
+    return t, SA, W, SS, L
 
 def generate_date(N_g,gmin,gmax,N_o,Omin,Omax,tmin,tmax,Smax,N_d):
-    Time, ShearRate, Frequency, ShearStress, Lambda = [], [], [], [], []
-    shear = np.linspace(gmin, gmax, N_g)
+    Time, StrainAmplitude, Frequency, ShearStress, Lambda = [], [], [], [], []
+    strain_amp = np.linspace(gmin, gmax, N_g)
     omega = np.linspace(Omin,Omax,N_o)
     param_exact = [40., 10., 10., 5, 0.1, 0.3] #G, sy, es, ep, kp, kn
     for ome in omega:
-        for gdot in shear:
-            t, SR, W, SS, L = TEVP(param_exact, Smax, tmin, tmax, gdot, ome, N_d)
+        for sa in strain_amp:
+            t, SA, W, SS, L = TEVP(param_exact, Smax, tmin, tmax, sa, ome, N_d)
             Time = np.append(Time, t, axis=None)
-            ShearRate = np.append(ShearRate, SR, axis=None)
+            StrainAmplitude = np.append(StrainAmplitude, SA, axis=None)
             Frequency = np.append(Frequency, W, axis=None)
             ShearStress = np.append(ShearStress, SS, axis=None)
             Lambda = np.append(Lambda, L, axis=None)
-    df = pd.DataFrame({"Time" : Time, "ShearRate" : ShearRate, "Frequency" : Frequency, "ShearStress" : ShearStress, "Lambda" : Lambda})
+    df = pd.DataFrame({"Time" : Time, "StrainAmplitude" : StrainAmplitude, "Frequency" : Frequency, "ShearStress" : ShearStress, "Lambda" : Lambda})
     df.to_excel("StartUp.xlsx", index=False)
 
 def read_data():
     df = pd.read_excel('StartUp.xlsx')
     x1_d = tf.reshape(tf.convert_to_tensor(df['Time'], dtype=DTYPE),(-1,1))
-    x2_d = tf.reshape(tf.convert_to_tensor(df['ShearRate'], dtype=DTYPE), (-1,1))
+    x2_d = tf.reshape(tf.convert_to_tensor(df['StrainAmplitude'], dtype=DTYPE), (-1,1))
     x3_d = tf.reshape(tf.convert_to_tensor(df['Frequency'], dtype=DTYPE), (-1,1))
     y1_d = tf.reshape(tf.convert_to_tensor(df['ShearStress'], dtype=DTYPE), (-1,1))
     y2_d = tf.reshape(tf.convert_to_tensor(df['Lambda'], dtype=DTYPE), (-1,1))
