@@ -158,10 +158,10 @@ def generate_date(N_g,gmin,gmax,N_o,Omin,Omax,tmin,tmax,Smax,N_d):
             ShearStress = np.append(ShearStress, SS, axis=None)
             Lambda = np.append(Lambda, L, axis=None)
     df = pd.DataFrame({"Time" : Time, "StrainAmplitude" : StrainAmplitude, "Frequency" : Frequency, "ShearStress" : ShearStress, "Lambda" : Lambda})
-    df.to_excel("StartUp.xlsx", index=False)
+    df.to_excel("LAOS.xlsx", index=False)
 
 def read_data():
-    df = pd.read_excel('StartUp.xlsx')
+    df = pd.read_excel('LAOS.xlsx')
     x1_d = tf.reshape(tf.convert_to_tensor(df['Time'], dtype=DTYPE),(-1,1))
     x2_d = tf.reshape(tf.convert_to_tensor(df['StrainAmplitude'], dtype=DTYPE), (-1,1))
     x3_d = tf.reshape(tf.convert_to_tensor(df['Frequency'], dtype=DTYPE), (-1,1))
