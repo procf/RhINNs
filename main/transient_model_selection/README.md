@@ -1,5 +1,5 @@
 # Inverse solution of a system of coupled ODEs (TEVP model)
-This project is currently submitted to Digital Discovery and is currently under review. The work is titled "*A rheologist’s guideline to data-driven recovery of complex fluids’ parameters from constitutive model.*"
+This project is currently submitted to [Digital Discovery]([https://pages.github.com/](https://www.rsc.org/journals-books-databases/about-journals/digital-discovery/?gclid=CjwKCAjwge2iBhBBEiwAfXDBR-bATOITicobc3FPEp2eDAkVcfwsthuNW1RxGuFgjoh62hfTHWRCZhoCMBQQAvD_BwE)) and is currently under review. The work is titled "*A rheologist’s guideline to data-driven recovery of complex fluids’ parameters from constitutive model.*"
 
 This is a Pythonic implementation of a neural network platform that will select the best constitutive model for a given set of data. In this work, nine (9) constitutive models for describing the [quasi] steady-state shear stress of a material versus the imposed shear rate are added to a library, and the platform is tested for each set of data.
 
