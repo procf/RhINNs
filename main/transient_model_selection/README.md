@@ -11,7 +11,8 @@ In this project, the following packages are actively used:
 1. `python` v3.9.12, 
 2. `tensorflow` v2.10 (for the backbone),
 3. `numpy` v1.22.1 (you know),
-4. `pandas` v1.3.5 (for pre-/post-processing),
+4. `pandas` v1.3.5 (for pre-/post-processing), and
+5. `scipy` v1.9.3 (to solve the coupled ODEs in the forward problem).
 
 ## Hardware/OS tested
 The program was tested on a MBP M1 Max (64 GB RAM) running macOS Ventura v13.3.1.
@@ -28,7 +29,7 @@ where $\sigma^*$ is the normalized shear stress in a material, the dot superscri
 ```
 where the first term on the RHS is responsible for the structure formation buildup and the second one is for the shear-induced structure breakup. $\lambda$ is bound between 0 and 1, where 0 is for a fully destructured material, and 1 is for fully-structured material (typically in rest). The objective is to recoved this ODE system's fitting parameters, i.e., $G$, $\eta_s$, $\eta_p$, $\sigma_y$, $k_+$, and $k_-$.
 
-How? We generate a set of transient data using th
+How? We generate a set of transient data using the same TEVP ODE system. To do so, we use `SciPy`'s `odeint` method.
 
 Suppose you have the steady-state shear stress (&sigma;, in Pa) of a set of materials vs. the imposed shear rate (<img src="https://render.githubusercontent.com/render/math?math=\dot{\gamma}"> in s<sup>-1</sup>). You are interested in knowing which constitutive model best describes your data. These constitutive models can be as simple as the power-law ,<img src="https://render.githubusercontent.com/render/math?math=\sigma=K\dot{\gamma}^n">, where K and n are model parameters. The list goes on; you can use more complicated constitutive models even for a steady-state shear stress vs. strain rate set of data. Here's the question: How much complication in your constitutive model do you need?
 
