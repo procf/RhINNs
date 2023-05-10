@@ -19,9 +19,11 @@ The program was tested on a MBP M1 Max (64 GB RAM) running macOS Ventura v13.3.1
 ## Background... ish
 
 Suppose you have a system of coupled ODEs:
-```math
+$$
+\begin{equation}
 \dot\sigma^*(t)=\frac{\sigma(t)}{\sigma_{max}}=\frac{G}{\eta_s+\eta_p}\left[-\sigma^*(t)+\frac{\sigma_y \lambda(t)}{\sigma_{max}}+\frac{\eta_s+\eta_p \lambda(t)}{\sigma_{max}}\dot\gamma(t)\right]\label{eq:TEVP_sigma}
-```
+\end{equation}
+$$
 
 Suppose you have the steady-state shear stress (&sigma;, in Pa) of a set of materials vs. the imposed shear rate (<img src="https://render.githubusercontent.com/render/math?math=\dot{\gamma}"> in s<sup>-1</sup>). You are interested in knowing which constitutive model best describes your data. These constitutive models can be as simple as the power-law ,<img src="https://render.githubusercontent.com/render/math?math=\sigma=K\dot{\gamma}^n">, where K and n are model parameters. The list goes on; you can use more complicated constitutive models even for a steady-state shear stress vs. strain rate set of data. Here's the question: How much complication in your constitutive model do you need?
 
