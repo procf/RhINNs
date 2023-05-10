@@ -1,33 +1,20 @@
 # Inverse solution of a system of coupled ODEs (TEVP model)
 This project is currently submitted to [Digital Discovery](https://www.rsc.org/journals-books-databases/about-journals/digital-discovery) and is currently under review. The work is titled "*A rheologist’s guideline to data-driven recovery of complex fluids’ parameters from constitutive model.*"
 
-This is a Pythonic implementation of a neural network platform that will select the best constitutive model for a given set of data. In this work, nine (9) constitutive models for describing the [quasi] steady-state shear stress of a material versus the imposed shear rate are added to a library, and the platform is tested for each set of data.
+This is a Pythonic implementation of a neural network platform that solves a set of coupled ODEs in an inverse implementation, meaning that the fitting parameters of the ODEs are extracted.
 
 ## What to expect
-Here, I included the following:
-1. Jupyter Notebook (`Model_selection_RhINN.ipynb`)
-2. Its .py version for the laziest (`Model_selection_RhINN.py`)
-3. Two benchmarks for RhINN:
-    1. Bayesian-based with `pymc3` (`BIC.ipynb`)
-    2. Scipy-based (`Scipy.ipynb`)
-4. The data that we used to train, test, and benchmark our platform (`ExpData.xlsx`)
-
-PS: Since I had issues installing `pymc3`, I had to create a separate `conda` environment for `BIC.ipynb`. The following package versions are applied only to the main `ipynb` and `py` files for RhINNs.
+Here, I included the Jupyter Notebook for flow startup (`Startup_TEVP.ipynb`) and oscillatory (`LAOS_TEVP.ipynb`) cases,
 
 ## Software/package requirements
 In this project, the following packages are actively used:
 1. `python` v3.9.12, 
-2. `tensorflow` v2.7.0 (for the backbone),
+2. `tensorflow` v2.10 (for the backbone),
 3. `numpy` v1.22.1 (you know),
 4. `pandas` v1.3.5 (for pre-/post-processing),
-5. `tensorflow_probability` v0.7.0 (for L-BFGS optimization, optional),
-6. `pymc3` v3.11.5 (for Bayesian Inference Criterion (BIC) benchmark, optional), and
-7. `scipy` v1.7.3 (for Trust Region Reflective benchmark, optional).
-
-PS: This MBP was a new release, so I tested `tensorflow-metal` as well. The speed was rediculously lower compared to `tensorflow`. I googled a bit and it seems that this is a common behavior when dealing with not-so-huge amount of data. Hope `tensorflow-metal` gets faster in the future, tho.
 
 ## Hardware/OS tested
-The program (excluding `tensorflow_probability`) was tested on a MBP M1 Max (64 GB RAM) running macOS Monterey v12.3.1. The program, excluding `tensorflow_probability` was also briefly tested on a Dell OptiPlex 7440 AIO (Core i7-6700 CPU @ 3.40 GHz, 16 GB RAM) running Windows 10 Enterprise 21H1. The  versions listed above are all for the MBP machine.
+The program was tested on a MBP M1 Max (64 GB RAM) running macOS Ventura v13.3.1.
 
 ## Background... ish
 
