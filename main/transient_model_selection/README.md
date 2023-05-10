@@ -22,10 +22,11 @@ Suppose you have a system of coupled ODEs:
 ```math
 \dot\sigma^*(t)=\frac{\sigma(t)}{\sigma_{max}}=\frac{G}{\eta_s+\eta_p}\left[-\sigma^*(t)+\frac{\sigma_y \lambda(t)}{\sigma_{max}}+\frac{\eta_s+\eta_p \lambda(t)}{\sigma_{max}}\dot\gamma(t)\right]
 ```
-where $\sigma^*$ is the normalized shear stress in a material, the dot superscript denotes the time derivative, $\sigma(t)$ is the actual shear stress (in Pa), and $\dot\gamma(t)$ is the imposed shear rate (in $s^{-1}$). The variation of $\lambda(t)$, which is the structure parameter of a structured material is governed by the other ODE:
+where $\sigma^*$ is the normalized shear stress in a material, the dot superscript denotes the time derivative, $\sigma(t)$ is the actual shear stress (in Pa), and $\dot\gamma(t)$ is the imposed shear rate (in $s^{-1}$). The variation of $\lambda(t)$, which is the dimensionless structure parameter of a material, is governed by the other ODE:
 ```math
     \dot\lambda(t)=k_+\left(1-\lambda(t)\right) - k_-\lambda(t)\dot\gamma(t)
 ```
+where the first term on the RHS is responsible for the structure formation buildup and the second one is for the shear-induced structure breakup. $\lambda$ is bound between 0 and 1, where 0 is for a fully destructured material, and 1 is for fully-structured material (typically in rest). The objective is to recoved this ODE system's fitting parameters, i.e., $G$, $\eta_s$, $\eta_p$, $\sigma_y$, $k_+$, and $k_-$.
 
 Suppose you have the steady-state shear stress (&sigma;, in Pa) of a set of materials vs. the imposed shear rate (<img src="https://render.githubusercontent.com/render/math?math=\dot{\gamma}"> in s<sup>-1</sup>). You are interested in knowing which constitutive model best describes your data. These constitutive models can be as simple as the power-law ,<img src="https://render.githubusercontent.com/render/math?math=\sigma=K\dot{\gamma}^n">, where K and n are model parameters. The list goes on; you can use more complicated constitutive models even for a steady-state shear stress vs. strain rate set of data. Here's the question: How much complication in your constitutive model do you need?
 
