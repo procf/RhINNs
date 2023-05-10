@@ -21,7 +21,7 @@ The program was tested on a MBP M1 Max (64 GB RAM) running macOS Ventura v13.3.1
 Suppose you have a system of coupled ODEs:
 ```math
 \begin{equation}
-\dot\sigma^*(t)=\frac{\sigma(t)}{\sigma_{max}}=\frac{G}{\eta_s+\eta_p}\left[-\sigma^*(t)+\frac{\sigma_y \lambda(t)}{\sigma_{max}}+\frac{\eta_s+\eta_p \lambda(t)}{\sigma_{max}}\dot\gamma(t)\right]\label{eq:TEVP_sigma}
+\dot\sigma^*(t)=\frac{\sigma(t)}{\sigma_{max}}=\frac{G}{\eta_s+\eta_p}\left[-\sigma^*(t)+\frac{\sigma_y \lambda(t)}{\sigma_{max}}+\frac{\eta_s+\eta_p \lambda(t)}{\sigma_{max}}\dot\gamma(t)\right]
 ```
 where $\sigma^*$
 
