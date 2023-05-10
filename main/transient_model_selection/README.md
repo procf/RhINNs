@@ -8,10 +8,10 @@ Here, I included the Jupyter Notebook for flow startup (`Startup_TEVP.ipynb`) an
 
 ## Software/package requirements
 In this project, the following packages are actively used:
-1. `python` v3.9.12, 
-2. `tensorflow` v2.10 (for the backbone),
-3. `numpy` v1.22.1 (you know),
-4. `pandas` v1.3.5 (for pre-/post-processing), and
+1. `python` v3.10.3, 
+2. `tensorflow` v2.11.0 (for the backbone),
+3. `numpy` v1.24.3 (you know),
+4. `pandas` v1.5.3 (for pre-/post-processing), and
 5. `scipy` v1.9.3 (to solve the coupled ODEs in the forward problem).
 
 ## Hardware/OS tested
