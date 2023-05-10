@@ -15,7 +15,7 @@ In this project, the following packages are actively used:
 5. `scipy` v1.9.3 (to solve the coupled ODEs in the forward problem).
 
 ## Hardware/OS tested
-The program was tested on a MBP M1 Max (64 GB RAM) running macOS Ventura v13.3.1.
+The program was tested on an MBP M1 Max (64 GB RAM) running macOS Ventura v13.3.1.
 
 ## Background... ish
 
