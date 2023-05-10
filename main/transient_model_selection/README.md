@@ -33,4 +33,4 @@ How? We generate a set of transient data using the same TEVP ODE system. To do s
 
 
 ## Contributors
-This work was done by [Milad Saadat](https://scholar.google.com/citations?user=PPLvVmEAAAAJ&hl=en&authuser=1), [Mohammadamin Mahmoudabadbozchelou](https://scholar.google.com/citations?user=C57oydEAAAAJ&hl=en), and [Safa Jamali](https://scholar.google.com/citations?user=D1asaYIAAAAJ&hl=en). Authors also would like to thank Prof. George Em. Karniadakis for fruitful discussions about method development
+This work was done by [Milad Saadat](https://scholar.google.com/citations?user=PPLvVmEAAAAJ&hl=en&authuser=1), [Deepak Mangal](https://scholar.google.com/citations?hl=en&user=AoYKLW4AAAAJ&view_op=list_works&sortby=pubdate), and [Safa Jamali](https://scholar.google.com/citations?user=D1asaYIAAAAJ&hl=en). Authors acknowledge the National Science Foundation's DMREF \#2118962 award.
