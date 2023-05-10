@@ -1,5 +1,5 @@
 # Model selection using RhINNs
-This project is now available at [https://doi.org/10.1007/s00397-022-01357-w](https://doi.org/10.1007/s00397-022-01357-w). The work is titled "*Data-driven selection of constitutive models via Rheology-informed Neural Networks (RhINNs).*"
+This project, accepted for publication in Rheologica Acta, is now available at [https://doi.org/10.1007/s00397-022-01357-w](https://doi.org/10.1007/s00397-022-01357-w). The work is titled "*Data-driven selection of constitutive models via Rheology-informed Neural Networks (RhINNs).*"
 
 This is a Pythonic implementation of a neural network platform that will select the best constitutive model for a given set of data. In this work, nine (9) constitutive models for describing the [quasi] steady-state shear stress of a material versus the imposed shear rate are added to a library, and the platform is tested for each set of data.
 
