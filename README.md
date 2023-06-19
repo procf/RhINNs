@@ -2,12 +2,11 @@
 In this repo, We'll post our projects on rheology-informed neural networks (RhINNs).
 
 # Who we are
-We are a computational [lab](https://web.northeastern.edu/complexfluids/research/) at Northeastern University, Boston, MA (PI Professor [Safa Jamali](https://coe.northeastern.edu/people/jamali-safa/)). We are mostly interested in physics and rheology of matters. At the moment, our group has three main cores:
-1. Hemorheology of blood using Dissipative Particle Dyanmics (DPD),
-2. Colloid dynamics using DPD, and
-3. Physics-informed learning in rheology.
+We are a computational [lab](https://web.northeastern.edu/complexfluids/research/) at Northeastern University, Boston, MA (PI Professor [Safa Jamali](https://coe.northeastern.edu/people/jamali-safa/)). We are mostly interested in physics and rheology of matter. At the moment, our group has two main cores:
+1. Colloid dynamics using DPD and
+2. machine learning in rheology.
 
-This repo is created [and hopefully remains updated] for the third concentration of our group. I am Milad Saadat. Feel free to reach out to me if you had questions/comments about this repo.
+This repo is created [and hopefully remains updated] for the second concentration of our group. I am Milad Saadat. Feel free to reach out to me if you had questions/comments about this repo.
 
 # Contributors and authors
 
