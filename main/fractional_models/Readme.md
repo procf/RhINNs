@@ -46,6 +46,13 @@ The thing here is that inverse-solvers for FDEs are virtually absent in the lite
 ```math
 \textrm{D}^{\alpha}_t f(t) = \frac{1}{h^{\alpha}\Gamma(2-\alpha)} \sum_{n=0}^{n_r} a_{n,n_r}(f_{n_r-n}-f_{0}) + O(h^{2-\alpha})
 ```
+where $h$ is the [uniform] step size ($h=t/n_r$), $f_0$ is the value of $f(t)$ at $t=0$, and $a_{n,n_r}$ is the quadrature weights derived from a product trapezoidal rule:
+
+```math
+1, & \text{if }n=0 \\
+      (n+1)^{1-\alpha}-2n^{1-\alpha}+(n-1)^{1-\alpha}, & \text{if }0<n<n_r \\
+      (1-\alpha)n_r^{-\alpha}-n_r^{1-\alpha}+(n_r-1)^{1-\alpha}, & \text{if }n=n_r
+```
 
 transient data using the same TEVP ODE system. To do so, we use `SciPy`'s `odeint` method. Then, we embed a range of TEVP models in RhINNs, from simple to complex, to study the effect of constitutive model complexity on parameter recovery. Then, we carefully studied the effect of RhINN hyperparameters (e.g., error heuristics, fitting parameters' ICs and bounds) to select the most influential hyperparameters when a researcher has convergence (and recovery) issues. Finally, to study the effect of the given data, we used two flow protocols, i.e., flow startup and oscillatory shear. Also, we studied the effect of the number of experiments for each flow protocol on parameter recovery.
 
