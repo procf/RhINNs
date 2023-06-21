@@ -30,7 +30,10 @@ The viscoelastic response, as the name suggests, inherits the elastic response o
 \sigma(t) = E\tau^\alpha\frac{\mathrm{d}^{\alpha}\epsilon (t)}{{\mathrm{d}t}^{\alpha}}=\mathbb{V}\frac{\mathrm{d}^{\alpha}\epsilon (t)}{{\mathrm{d}t}^{\alpha}}
 ```
 
-where $E$ and $\tau$ are the elastic modulus (in Pa) and relaxation time (in s), respectively, and $0\le\alpha\le1$ is the fractional derivative order. To know more about fractional calculus, don't miss Prof. Kai Diethelm's awesome works on the topic, e.g., [this](https://doi.org/10.1142/8180) one.
+where $E$ and $\tau$ are the elastic modulus (in Pa) and relaxation time (in s), respectively, and $0\le\alpha\le1$ is the fractional derivative order. In other words, the above equation contains both the viscous and elastic responses, and is called a *Scott-Blair* (or *spring-pot*) element. To know more about fractional calculus, don't miss out on Prof. Kai Diethelm's awesome works on the topic, e.g., [this](https://doi.org/10.1142/8180) one.
+
+There are three fractional models that we studied here:
+1. Fractional Maxwell model by stacking
 
 where the first term on the RHS is responsible for the structure formation buildup and the second one is for the shear-induced structure breakup. $\lambda$ is bound between 0 and 1, where 0 is for a fully destructured material, and 1 is for fully-structured material (typically in rest). The objective is to recoved this ODE system's fitting parameters, i.e., $G$, $\eta_s$, $\eta_p$, $\sigma_y$, $k_+$, and $k_-$.
 
