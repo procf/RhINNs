@@ -18,7 +18,7 @@ The program was tested on an MBP M1 Max (64 GB RAM) running macOS Ventura v13.4
 
 ## Background... ish
 
-Suppose you have a system of coupled ODEs:
+Suppose you have a viscoelastic material. Canonically, the simplest model that you can use to predict the material behavior (e.g., stress in rate-controlled rheometry) is the Maxwell viscoelastic model:
 ```math
     \sigma(t)+\frac{\eta}{G}\frac{\partial \sigma(t)}{\partial t}=-\eta\dot\epsilon (t)
 ```
