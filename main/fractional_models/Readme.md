@@ -49,8 +49,8 @@ The thing here is that inverse-solvers for FDEs are virtually absent in the lite
 where $h$ is the [uniform] step size ($h=t/n_r$), $f_0$ is the value of $f(t)$ at $t=0$, and $a_{n,n_r}$ is the quadrature weights derived from a product trapezoidal rule:
 
 ```math
-1, & \text{if }n=0 \\
-      (n+1)^{1-\alpha}-2n^{1-\alpha}+(n-1)^{1-\alpha}, & \text{if }0<n<n_r \\
+1, & \text{if }n=0
+      (n+1)^{1-\alpha}-2n^{1-\alpha}+(n-1)^{1-\alpha}, & \text{if }0<n<n_r
       (1-\alpha)n_r^{-\alpha}-n_r^{1-\alpha}+(n_r-1)^{1-\alpha}, & \text{if }n=n_r
 ```
 
