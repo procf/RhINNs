@@ -24,11 +24,13 @@ Suppose you have a viscoelastic material. Canonically, the simplest model that y
 ```
 where $\sigma$ is the shear stress (in Pa), $\eta$ and $G$ are the viscosity (in Pa.s) and elastic modulus (in Pa), respectively, the ratio of which ($\eta/G$) may be thought of as a relaxation time, $t$ is time (in s), and $\dot\epsilon (t)$, in $s^{-1}$, is the imposed deformation rate.
 
-The viscoelastic response, as the name suggests, inherits the elastic response of a solid ($\sigma (t)\propto \epsilon$) and the viscous behavior of a Newtonian fluid ($\sigma (t)\propto \frac{\partial \epsilon}{\partial t}$).
+The viscoelastic response, as the name suggests, inherits the elastic response of a solid ($\sigma (t)\propto \epsilon$) and the viscous behavior of a Newtonian fluid ($\sigma (t)\propto \frac{\partial \epsilon}{\partial t}$). It turned out that viscoelasticity can be compactly described using the concept of fractional derivatives:
 
 ```math
-    \dot\lambda(t)=k_+\left(1-\lambda(t)\right) - k_-\lambda(t)\dot\gamma(t)
-```
+\sigma(t) = E\tau^\alpha\frac{\mathrm{d}^{\alpha}\epsilon (t)}{{\mathrm{d}t}^{\alpha}}=\mathbb{V}\frac{\mathrm{d}^{\alpha}\epsilon (t)}{{\mathrm{d}t}^{\alpha}}```
+
+where $E$ and $\tau$ are the elastic modulus (in \unit{\pascal}) and relaxation time (in \unit{\second}), respectively, and $0\le\alpha\le1$ is the fractional derivative order.
+
 where the first term on the RHS is responsible for the structure formation buildup and the second one is for the shear-induced structure breakup. $\lambda$ is bound between 0 and 1, where 0 is for a fully destructured material, and 1 is for fully-structured material (typically in rest). The objective is to recoved this ODE system's fitting parameters, i.e., $G$, $\eta_s$, $\eta_p$, $\sigma_y$, $k_+$, and $k_-$.
 
 How? We generate a set of transient data using the same TEVP ODE system. To do so, we use `SciPy`'s `odeint` method. Then, we embed a range of TEVP models in RhINNs, from simple to complex, to study the effect of constitutive model complexity on parameter recovery. Then, we carefully studied the effect of RhINN hyperparameters (e.g., error heuristics, fitting parameters' ICs and bounds) to select the most influential hyperparameters when a researcher has convergence (and recovery) issues. Finally, to study the effect of the given data, we used two flow protocols, i.e., flow startup and oscillatory shear. Also, we studied the effect of the number of experiments for each flow protocol on parameter recovery.
