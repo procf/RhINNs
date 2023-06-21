@@ -1,7 +1,8 @@
-# Inverse solution of fractional differential equations using RhINNs
+# Inverse solution of fractional differential equations (FDEs) using RhINNs
 This project is currently submitted to [Rheologica Acta](https://www.springer.com/journal/397) and is currently under review. The work is titled "*Fractional rheology-informed neural networks for data-driven identification of viscoelastic constitutive models.*"
 
-This is a Pythonic implementation of a neural network platform that solves a set of coupled ODEs in an inverse implementation, meaning that the fitting parameters of the ODEs are extracted. To do so, we need data, similar to other curve fitting problems. Here, there are three components in tight interaction with each other in a physics-informed neural network: the constitutive equation that is embedded in the NN, the NN hyperparameters, and the data. In this submission, we rigorously investigated the effect of all three componenets in isolation.
+This is a Pythonic implementation of a neural network platform that solves fractional viscoelastic differential equations in an inverse implementation, meaning that the fractional derivative orders of FDEs are of interest. It is commonly agreed upon that fractional derivatives are a neat tool to represent viscoelasticity (and other physical phenomena such as advection-diffusion of species).
+fitting parameters of the ODEs are extracted. To do so, we need data, similar to other curve fitting problems. Here, there are three components in tight interaction with each other in a physics-informed neural network: the constitutive equation that is embedded in the NN, the NN hyperparameters, and the data. In this submission, we rigorously investigated the effect of all three componenets in isolation.
 
 ## What to expect
 Here, I included the Jupyter Notebook for flow startup (`Startup_TEVP.ipynb`) and oscillatory (`LAOS_TEVP.ipynb`) cases.
