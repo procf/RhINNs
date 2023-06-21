@@ -10,12 +10,11 @@ There are three fractional viscoelastic constitutive equations that we studied i
 In this project, the following packages are actively used:
 1. `python` v3.10.3, 
 2. `tensorflow` v2.11.0 (for the backbone),
-3. `numpy` v1.24.3 (you know),
-4. `pandas` v1.5.3 (for pre-/post-processing), and
-5. `scipy` v1.9.3 (to solve the coupled ODEs in the forward problem).
+3. `numpy` v1.24.3 (you know), and
+4. `pandas` v1.5.3 (for pre-/post-processing).
 
 ## Hardware/OS tested
-The program was tested on an MBP M1 Max (64 GB RAM) running macOS Ventura v13.3.1.
+The program was tested on an MBP M1 Max (64 GB RAM) running macOS Ventura v13.4
 
 ## Background... ish
 
