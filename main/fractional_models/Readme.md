@@ -8,7 +8,7 @@ There are three fractional viscoelastic constitutive equations that we studied i
 
 ## Software/package requirements
 In this project, the following packages are actively used:
-1. `python` v3.10.3, 
+1. `python` v3.10.11, 
 2. `tensorflow` v2.11.0 (for the backbone),
 3. `numpy` v1.24.3 (you know), and
 4. `pandas` v1.5.3 (for pre-/post-processing).
@@ -20,7 +20,7 @@ The program was tested on an MBP M1 Max (64 GB RAM) running macOS Ventura v13.4
 
 Suppose you have a system of coupled ODEs:
 ```math
-\dot\sigma^*(t)=\frac{\sigma(t)}{\sigma_{max}}=\frac{G}{\eta_s+\eta_p}\left[-\sigma^*(t)+\frac{\sigma_y \lambda(t)}{\sigma_{max}}+\frac{\eta_s+\eta_p \lambda(t)}{\sigma_{max}}\dot\gamma(t)\right]
+    \sigma(t)+\frac{\eta}{G}\frac{\partial \sigma(t)}{\partial t}=-\eta\dot\epsilon (t)
 ```
 where $\sigma^*$ is the normalized shear stress in a material, the dot superscript denotes the time derivative, $\sigma(t)$ is the actual shear stress (in Pa), and $\dot\gamma(t)$ is the imposed shear rate (in $s^{-1}$). The variation of $\lambda(t)$, which is the dimensionless structure parameter of a material, is governed by the other ODE:
 ```math
