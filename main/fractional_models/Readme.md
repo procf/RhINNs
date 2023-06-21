@@ -30,7 +30,7 @@ The viscoelastic response, as the name suggests, inherits the elastic response o
 \sigma(t) = E\tau^\alpha\frac{\mathrm{d}^{\alpha}\epsilon (t)}{{\mathrm{d}t}^{\alpha}}=\mathbb{V}\frac{\mathrm{d}^{\alpha}\epsilon (t)}{{\mathrm{d}t}^{\alpha}}
 ```
 
-where $E$ and $\tau$ are the elastic modulus (in Pa) and relaxation time (in s), respectively, and $0\le\alpha\le1$ is the fractional derivative order. In this formalism, the product of $E$ and $\tau^\alpha$ (in \unit{\pascal\cdot\second^\alpha}), may be thought of as a \textit{quasi-property}, $\mathbb{V}$, whose unit depends on the fractional derivative. In other words, the above equation contains both the viscous and elastic responses, and is called a *Scott-Blair* (or *spring-pot*) element. To know more about fractional calculus, don't miss out on Prof. Kai Diethelm's awesome works on the topic, e.g., [this](https://doi.org/10.1142/8180) one.
+where $E$ and $\tau$ are the elastic modulus (in Pa) and relaxation time (in s), respectively, and $0\le\alpha\le1$ is the fractional derivative order. In this formalism, the product of $E$ and $\tau^\alpha$ (in $\mathrm{Pa\cdot s^{\alpha}}$), may be thought of as a \textit{quasi-property}, $\mathbb{V}$, whose unit depends on the fractional derivative. In other words, the above equation contains both the viscous and elastic responses, and is called a *Scott-Blair* (or *spring-pot*) element. To know more about fractional calculus, don't miss out on Prof. Kai Diethelm's awesome works on the topic, e.g., [this](https://doi.org/10.1142/8180) one.
 
 There are three fractional models that we studied here:
 1. Fractional Maxwell model by stacking two spring-pots in series,
