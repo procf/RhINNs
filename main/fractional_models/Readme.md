@@ -27,9 +27,10 @@ where $\sigma$ is the shear stress (in Pa), $\eta$ and $G$ are the viscosity (in
 The viscoelastic response, as the name suggests, inherits the elastic response of a solid ($\sigma (t)\propto \epsilon$) and the viscous behavior of a Newtonian fluid ($\sigma (t)\propto \frac{\partial \epsilon}{\partial t}$). It turned out that viscoelasticity can be compactly described using the concept of fractional derivatives:
 
 ```math
-\sigma(t) = E\tau^\alpha\frac{\mathrm{d}^{\alpha}\epsilon (t)}{{\mathrm{d}t}^{\alpha}}=\mathbb{V}\frac{\mathrm{d}^{\alpha}\epsilon (t)}{{\mathrm{d}t}^{\alpha}}```
+ss
+```
 
-where $E$ and $\tau$ are the elastic modulus (in Pa) and relaxation time (in s), respectively, and $0\le\alpha\le1$ is the fractional derivative order.
+where $E$ and $\tau$ are the elastic modulus (in \unit{\pascal}) and relaxation time (in \unit{\second}), respectively, and $0\le\alpha\le1$ is the fractional derivative order.
 
 where the first term on the RHS is responsible for the structure formation buildup and the second one is for the shear-induced structure breakup. $\lambda$ is bound between 0 and 1, where 0 is for a fully destructured material, and 1 is for fully-structured material (typically in rest). The objective is to recoved this ODE system's fitting parameters, i.e., $G$, $\eta_s$, $\eta_p$, $\sigma_y$, $k_+$, and $k_-$.
 
