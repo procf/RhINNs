@@ -1,5 +1,5 @@
-# Fractional rheology-informed neural networks for data-driven identification of viscoelastic constitutive models
-This project is currently submitted to [Digital Discovery](https://www.rsc.org/journals-books-databases/about-journals/digital-discovery) and is currently under review. The work is titled "*A rheologist’s guideline to data-driven recovery of complex fluids’ parameters from constitutive model.*"
+# Inverse solution of fractional differential equations using RhINNs
+This project is currently submitted to [Rheologica Acta](https://www.springer.com/journal/397) and is currently under review. The work is titled "*Fractional rheology-informed neural networks for data-driven identification of viscoelastic constitutive models.*"
 
 This is a Pythonic implementation of a neural network platform that solves a set of coupled ODEs in an inverse implementation, meaning that the fitting parameters of the ODEs are extracted. To do so, we need data, similar to other curve fitting problems. Here, there are three components in tight interaction with each other in a physics-informed neural network: the constitutive equation that is embedded in the NN, the NN hyperparameters, and the data. In this submission, we rigorously investigated the effect of all three componenets in isolation.
 
