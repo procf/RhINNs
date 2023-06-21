@@ -50,9 +50,9 @@ where $h$ is the [uniform] step size ($h=t/n_r$), $f_0$ is the value of $f(t)$ a
 
 ```math
 a_{n,n_r} = 
-- 1,                               if n = 0
-- (n+1)^{1-\alpha} - 2n^{1-\alpha} + (n-1)^{1-\alpha},    if 0 < n < n_r
-- (1-\alpha)n_r^{-\alpha} - n_r^{1-\alpha} + (n_r-1)^{1-\alpha},    if n = n_r
+    - 1,                                                    if n = 0
+    - (n+1)^{1-\alpha} - 2n^{1-\alpha} + (n-1)^{1-\alpha},    if 0 < n < n_r
+    - (1-\alpha)n_r^{-\alpha} - n_r^{1-\alpha} + (n_r-1)^{1-\alpha},    if n = n_r
 ```
 
 
