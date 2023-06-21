@@ -22,7 +22,7 @@ Suppose you have a viscoelastic material. Canonically, the simplest model that y
 ```math
     \sigma(t)+\frac{\eta}{G}\frac{\partial \sigma(t)}{\partial t}=-\eta\dot\epsilon (t)
 ```
-where $\sigma^*$ is the normalized shear stress in a material, the dot superscript denotes the time derivative, $\sigma(t)$ is the actual shear stress (in Pa), and $\dot\gamma(t)$ is the imposed shear rate (in $s^{-1}$). The variation of $\lambda(t)$, which is the dimensionless structure parameter of a material, is governed by the other ODE:
+where $\sigma$ is the shear stress (in Pa), $\eta$ and $G$ are the viscosity (in Pa.s) and elastic modulus (in Pa), respectively, the ratio of which ($\eta/G$) may be thought of as a relaxation time, $t$ is time (in s), and $\dot\epsilon (t)$, in $s^{-1}$, is the imposed deformation rate.
 ```math
     \dot\lambda(t)=k_+\left(1-\lambda(t)\right) - k_-\lambda(t)\dot\gamma(t)
 ```
