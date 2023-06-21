@@ -41,19 +41,7 @@ The objective is to recover the fractional derivative order of these three model
 
 How? We generate a set of relaxation modulus (or creep complience) data in time using the analytical solutions of these three models (and the known fractional derivative orders). Then, we embed an FDE for each of these models with unknown fitting parameters, which are the derivative orders. The NN, by leveraging the data and the FDE, will try to recover the fitting parameters. 
 
-The thing here is that inverse-solvers for FDEs are virtually absent in the literature, and that's why we focused on cases with known analytical solutions. Also, we needed to find an in implementable version of fractional derivatives as TensorFlow (similar to other machine learning packages) are still not compatible with integrations. To do so, we used the discretized version of fractional derivatives in the Caputo sense:
-
-```math
-\textrm{D}^{\alpha}_t f(t) = \frac{1}{h^{\alpha}\Gamma(2-\alpha)} \sum_{n=0}^{n_r} a_{n,n_r}(f_{n_r-n}-f_{0}) + O(h^{2-\alpha})
-```
-where $h$ is the [uniform] step size ($h=t/n_r$), $f_0$ is the value of $f(t)$ at $t=0$, and $a_{n,n_r}$ is the quadrature weights derived from a product trapezoidal rule:
-
-```math
-a_{n,n_r} = 
-    - 1,                                                    if n = 0
-    - (n+1)^{1-\alpha} - 2n^{1-\alpha} + (n-1)^{1-\alpha},    if 0 < n < n_r
-    - (1-\alpha)n_r^{-\alpha} - n_r^{1-\alpha} + (n_r-1)^{1-\alpha},    if n = n_r
-```
+The thing here is that inverse-solvers for FDEs are virtually absent in the literature, and that's why we focused on cases with known analytical solutions. Also, we needed to find an in implementable version of fractional derivatives as TensorFlow (similar to other machine learning packages) are still not compatible with integrations. To do so, we used the discretized version of fractional derivatives in the Caputo sense. We used Kai's seminal [work](https://doi.org/10.1016/j.cma.2004.06.006) and implementation.
 
 
 transient data using the same TEVP ODE system. To do so, we use `SciPy`'s `odeint` method. Then, we embed a range of TEVP models in RhINNs, from simple to complex, to study the effect of constitutive model complexity on parameter recovery. Then, we carefully studied the effect of RhINN hyperparameters (e.g., error heuristics, fitting parameters' ICs and bounds) to select the most influential hyperparameters when a researcher has convergence (and recovery) issues. Finally, to study the effect of the given data, we used two flow protocols, i.e., flow startup and oscillatory shear. Also, we studied the effect of the number of experiments for each flow protocol on parameter recovery.
