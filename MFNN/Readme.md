@@ -6,12 +6,6 @@ This is a TensorFlow implementation of a neural network platform that solves fra
 ## What to expect
 There are three fractional viscoelastic constitutive equations that we studied in this work: Fractional Maxwell (`FM.ipynb`), Fractional Kelvin-Voigt (`FKV.ipynb`), and Fractional Three Component (`FTC.ipynb`, a.k.a. Zener) constitutive equations. A Jupyter Notebook for each of these cases are included.
 
-```
-  git clone https://github.com/NeuralOperator/neuraloperator
-  cd neuraloperator
-  pip install -e .
-  pip install -r requirements.txt
-```
 
 ## Software/package requirements
 In this project, the following packages are actively used:
