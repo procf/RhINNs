@@ -1,7 +1,7 @@
-# Inverse solution of fractional differential equations (FDEs) using RhINNs
-This project is currently submitted to [Rheologica Acta](https://www.springer.com/journal/397) and is currently under review. The work is titled "*Fractional rheology-informed neural networks for data-driven identification of viscoelastic constitutive models.*"
+# Multi-fidelity frameworks as robust material response predictors and surrogate models
+This project is submitted to the [Journal of Rheology]([https://www.springer.com/journal/397](https://pubs.aip.org/sor/jor)) and is currently under review. The work is titled "*Data-driven constitutive meta-modeling of non-linear rheology via multi-fidelity neural networks.*"
 
-This is a Pythonic implementation of a neural network platform that solves fractional viscoelastic differential equations in an inverse implementation, meaning that the fractional derivative orders of FDEs are of interest. It is commonly agreed upon that fractional derivatives are a neat tool to represent viscoelasticity (and other physical phenomena such as advection-diffusion of species).
+This is a TensorFlow implementation of a neural network platform that solves fractional viscoelastic differential equations in an inverse implementation, meaning that the fractional derivative orders of FDEs are of interest. It is commonly agreed upon that fractional derivatives are a neat tool to represent viscoelasticity (and other physical phenomena such as advection-diffusion of species).
 
 ## What to expect
 There are three fractional viscoelastic constitutive equations that we studied in this work: Fractional Maxwell (`FM.ipynb`), Fractional Kelvin-Voigt (`FKV.ipynb`), and Fractional Three Component (`FTC.ipynb`, a.k.a. Zener) constitutive equations. A Jupyter Notebook for each of these cases are included.
