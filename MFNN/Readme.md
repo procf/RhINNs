@@ -1,4 +1,4 @@
-# Multi-fidelity frameworks as robust material response predictors and surrogate models
+# Multi-fidelity neural networks as robust material response predictors and surrogate models
 This project is submitted to the [Journal of Rheology]([https://www.springer.com/journal/397](https://pubs.aip.org/sor/jor)) and is currently under review. The work is titled "*Data-driven constitutive meta-modeling of non-linear rheology via multi-fidelity neural networks.*"
 
 This is a TensorFlow implementation of a neural network platform that solves fractional viscoelastic differential equations in an inverse implementation, meaning that the fractional derivative orders of FDEs are of interest. It is commonly agreed upon that fractional derivatives are a neat tool to represent viscoelasticity (and other physical phenomena such as advection-diffusion of species).
