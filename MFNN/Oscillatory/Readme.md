@@ -7,18 +7,14 @@ We've prepared and commented our Jupyter notebooks to ensure a smooth experience
 ### Notebooks:
 
 - **Lo-Fi Data Generation Notebook, Storage Modulus:**  
-  Dive into the process of generating low-fidelity data.  
   [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/procf/RhINNs/blob/main/MFNN/Oscillatory/Main_LF_AS_Gp.ipynb)
 
 - **Multi-Fidelity Neural Networks Notebook, Storage Modulus:**  
-  Explore the core of our research—the integration of low- and high-fidelity data using neural networks for enhanced predictions.  
   [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/procf/RhINNs/blob/main/MFNN/Oscillatory/Main_MFNN_AS_Gp.ipynb)
 
 - **Lo-Fi Data Generation Notebook, Loss Modulus:**  
-  Dive into the process of generating low-fidelity data.  
   [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/procf/RhINNs/blob/main/MFNN/Oscillatory/Main_LF_AS_Gdp.ipynb)
 
 - **Multi-Fidelity Neural Networks Notebook, Loss Modulus:**  
-  Explore the core of our research—the integration of low- and high-fidelity data using neural networks for enhanced predictions.  
   [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/procf/RhINNs/blob/main/MFNN/Oscillatory/Main_MFNN_AS_Gdp.ipynb)
 
