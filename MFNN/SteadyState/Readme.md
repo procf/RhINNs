@@ -1,4 +1,4 @@
-## Explore Our Notebooks on Google Colab
+## Multi-fidelity neural networks for steady shear rheometric prediction
 
 We've prepared and commented our Jupyter notebooks to ensure a smooth experience exploring our models and analyses. Should you have any inquiries or wish to discuss our work further, don't hesitate to reach out at [saadat.m@northeastern.edu](mailto:saadat.m@northeastern.edu). 
 
