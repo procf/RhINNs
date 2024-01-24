@@ -12,5 +12,5 @@ We've prepared and commented our Jupyter notebooks to ensure a smooth experience
 
 - **Multi-Fidelity Neural Networks Notebook, Storage Modulus:**  
   Explore the core of our research—the integration of low- and high-fidelity data using neural networks for enhanced predictions.  
-  [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/procf/RhINNs/blob/main/MFNN/StressGrowth/Main_MFNN_AS_Gp.ipynb)
+  [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/procf/RhINNs/blob/main/MFNN/Oscillatory/Main_MFNN_AS_Gp.ipynb)
 
