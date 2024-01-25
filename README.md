@@ -1,4 +1,4 @@
-# Rheology-informed neural networks
+# Rheology-informed Machine Learning
 In this repo, We'll post our projects on rheology-informed neural networks (RhINNs).
 
 # Who we are
