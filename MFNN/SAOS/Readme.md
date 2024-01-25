@@ -7,7 +7,7 @@ We've prepared and commented our Jupyter notebooks to ensure a smooth experience
 ### Notebooks:
 
 - **Lo-Fi Data Generation Notebook:**  
-  [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/procf/RhINNs/blob/main/MFNN/Oscillatory/Main_LF_AS_Gp.ipynb)
+  [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/procf/RhINNs/blob/main/MFNN/SAOS/Main_LF_SAOS.ipynb)
 
 - **Multi-Fidelity Neural Networks Notebook:**  
-  [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/procf/RhINNs/blob/main/MFNN/Oscillatory/Main_MFNN_AS_Gp.ipynb)
+  [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/procf/RhINNs/blob/main/MFNN/SAOS/Main_MFNN_SAOS.ipynb)
