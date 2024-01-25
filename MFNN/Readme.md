@@ -9,13 +9,13 @@ There are three fractional viscoelastic constitutive equations that we studied i
 
 ## Software/package requirements
 In this project, the following packages are actively used:
-1. `python` v3.10.11, 
-2. `tensorflow` v2.11.0 (for the backbone),
-3. `numpy` v1.24.3 (you know), and
-4. `pandas` v1.5.3 (for pre-/post-processing).
+1. `python` v3.11.7, 
+2. `tensorflow` v2.15.0 (for the backbone),
+3. `numpy` v1.26.2 (you know), and
+4. `pandas` v2.1.3 (for pre-/post-processing).
 
 ## Hardware/OS tested
-The program was tested on an MBP M1 Max (64 GB RAM) running macOS Ventura v13.4
+The program was tested on an MBP M1 Max (64 GB RAM) running macOS Sonoma v14.2.1.
 
 ## Background... ish
 
