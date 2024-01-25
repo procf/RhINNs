@@ -23,36 +23,9 @@ In practice, commonly one encounters a situation where a material response is co
 
 In such cases, multi-fidelity neural networks (MFNNs) offer a versatile solution by amalgamating data from various sources and fidelity levels. While high-fidelity (Hi-Fi) observables are difficult to gather (through, for instance, rheometry or flow simulations) and usually limited in quantity, low-fidelity (Lo-Fi) data that only approximately mimic the material response are abundant. Low-fidelity data can be obtained from simulations with simplified models and empirical laws or generated synthetically from the Hi-Fi data (or other reliable sources). In other words, the need for physical intuition is remedied by introducing inexpensive data that do not necessitate precise experimentation or simulations.
 
-Readily available consumer product Johnson's® Baby Shampoo was used for this investigation. The material is a surfactant solution with additional additives that form wormlike micelles (WLM) at room temperature. Details of components are provided in the accompanying table. This material was chosen not only for its ease of availability but for its rheological behavior as a TVE (Time-Viscosity-Elasticity) material typical of WLM solutions exhibiting shear thinning, viscoelasticity, and thermal dependence. Due to observed rheological differences between different shampoo bottles, all tests were performed from a single freshly opened bottle. Although model development for such materials has been successful, it is assumed in this work that no immediate model is available to describe the observables as this scenario is closest to a real-world case where an unknown sample is studied with little to no physical taxonomy.
+In `SteadyState`, `StressGrowth`, and `Oscillatory` cases, we assumed that no physical intuition is known whatsoever; all we had was the Hi-Fi data. Based on those Hi-Fi data, we generated low-quality, abundant Lo-Fi data to offset the lack of physics.
 
-Suppose you have a viscoelastic material. Canonically, the simplest model that you can use to predict the material behavior (e.g., stress in rate-controlled rheometry) is the Maxwell viscoelastic model:
-```math
-    \sigma(t)+\frac{\eta}{G}\frac{\partial \sigma(t)}{\partial t}=-\eta\dot\epsilon (t)
-```
-where $\sigma$ is the shear stress (in Pa), $\eta$ and $G$ are the viscosity (in Pa.s) and elastic modulus (in Pa), respectively, the ratio of which ($\eta/G$) may be thought of as a relaxation time, $t$ is time (in s), and $\dot\epsilon (t)$, in $s^{-1}$, is the imposed deformation rate.
-
-The viscoelastic response, as the name suggests, inherits the elastic response of a solid ($\sigma (t)\propto \epsilon$) and the viscous behavior of a Newtonian fluid ($\sigma (t)\propto \frac{\partial \epsilon}{\partial t}$). It turned out that viscoelasticity can be compactly described using the concept of fractional derivatives:
-
-```math
-\sigma(t) = E\tau^\alpha\frac{\mathrm{d}^{\alpha}\epsilon (t)}{{\mathrm{d}t}^{\alpha}}=\mathbb{V}\frac{\mathrm{d}^{\alpha}\epsilon (t)}{{\mathrm{d}t}^{\alpha}}
-```
-
-where $E$ and $\tau$ are the elastic modulus (in Pa) and relaxation time (in s), respectively, and $0\le\alpha\le1$ is the fractional derivative order. In this formalism, the product of $E$ and $\tau^\alpha$ (in $\mathrm{Pa\cdot s^{\alpha}}$), may be thought of as a *quasi-property*, $\mathbb{V}$, whose unit depends on the fractional derivative. In other words, the above equation contains both the viscous and elastic responses, and is called a *Scott-Blair* (or *spring-pot*) element. To know more about fractional calculus, don't miss out on Prof. Kai Diethelm's awesome works on the topic, e.g., [this](https://doi.org/10.1142/8180) one.
-
-There are three fractional models that we studied here:
-1. Fractional Maxwell model by stacking two spring-pots in series,
-2. Fractional Kelvin-Voigt model by assembling two spring-pots in parallel, and
-3. Fractional Three-Component (Zener) model by attaching a fractional Maxwell element parallel to another spring-pot element.
-
-The objective is to recover the fractional derivative order of these three models, i.e., two derivative orders (between 0 and 1) for each of the first two models and three derivative orders for the Zener model.
-
-How? We generate a set of relaxation modulus (or creep compliance) data in time using the analytical solutions of these three models (and the known fractional derivative orders). Then, we embed an FDE for each of these models with unknown fitting parameters, which are the derivative orders. The NN, by leveraging the data and the FDE, will try to recover the fitting parameters. 
-
-The thing here is that inverse-solvers for FDEs are virtually absent in the literature, and that's why we focused on cases with known analytical solutions. Also, we needed to find an implementable version of fractional derivatives as TensorFlow (similar to other machine learning packages) is still not compatible with integrations. To do so, we used the discretized version of fractional derivatives in the Caputo sense. We used Kai's seminal [work](https://doi.org/10.1016/j.cma.2004.06.006) and implementation.
-
-The rest is straightforward: We tweaked the ground-truth derivative orders to see if (or when) RhINNs crash for each of the three cases. During the entire process, we assumed the quasi-properties to be known from, say, prior rheometry (or superstition; I actually wanted to include this word in the manuscript, but somewhere along the road, the will was defied by the very same superstition). This assumption was almost necessary to evade non-unique solutions.
-
-The idea of fractional derivatives in PINNs is abandoned for some reason (except for one [work](https://arxiv.org/abs/2105.09506) by Prof. Karniadakis's team?). We are very much interested in this concept, especially since it has substantial physical justification in our line of work (and maybe because it's painful). So we are very interested in collaborations on this topic to unleash the potential of fractional derivatives in engineering and beyond!
+In `SAOS`, the above approach failed to generalize properly. For this reason, we employed a simple linear model, i.e., the Maxwell VE model, to generate Lo-Fi stress loops. Throughout this work, we wanted to optimize the number of experiments needed to train MFNNs. Therefore, we systematically masked experiments in generation of Lo-Fi data and also in NN training. Once a set is excluded from one, it is masked from the other, too.
 
 Here's the submission abstract: 
 
@@ -60,5 +33,6 @@ Predicting the response of complex fluids to different flow conditions has been 
 
 
 ## Contributors
-This work was done by Donya Dabiri, [Milad Saadat](https://scholar.google.com/citations?user=PPLvVmEAAAAJ&hl=en&authuser=1), [Deepak Mangal](https://scholar.google.com/citations?hl=en&user=AoYKLW4AAAAJ&view_op=list_works&sortby=pubdate), and [Safa Jamali](https://scholar.google.com/citations?user=D1asaYIAAAAJ&hl=en). Authors are grateful for insightful discussions with Dr. Gareth McKinley, and also acknowledge the support from the National Science Foundation's DMREF program through Award \#2118962.
+This project is a collaboration with the University of Delaware and the Wagner Group. This work was done by [Milad Saadat](https://scholar.google.com/citations?user=PPLvVmEAAAAJ&hl=en&authuser=1), Quent Hartt, [Norman Wagner](https://scholar.google.com/citations?user=YxgbdyQAAAAJ&hl=en), and [Safa Jamali](https://scholar.google.com/citations?user=D1asaYIAAAAJ&hl=en). Authors are thankful for insightful discussions with Dr. Mohammadamin Mahmoudabadbozchelou, and also acknowledge the support from the National Science Foundation’s DMREF
+program through Award \#2118962.
 
