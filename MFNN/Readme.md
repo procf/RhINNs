@@ -3,8 +3,6 @@ This project is submitted to the [Journal of Rheology]([https://www.springer.com
 
 This is a TensorFlow implementation of multi-fidelity neural network platform to predict material response of four flow protocols, i.e., steady shear, stress growth, oscillatory shear (amplitude and frequency sweeps), and small/large amplitude oscillatory shear.
 
-Readily available consumer product Johnson's® Baby Shampoo was used for this investigation. The material is a surfactant solution with additional additives that form wormlike micelles (WLM) at room temperature. Details of components are provided in the accompanying table. This material was chosen not only for its ease of availability but for its rheological behavior as a TVE (Time-Viscosity-Elasticity) material typical of WLM solutions exhibiting shear thinning, viscoelasticity, and thermal dependence. Due to observed rheological differences between different shampoo bottles, all tests were performed from a single freshly opened bottle. Although model development for such materials has been successful, it is assumed in this work that no immediate model is available to describe the observables as this scenario is closest to a real-world case where an unknown sample is studied with little to no physical taxonomy.
-
 ## What to expect
 There are three fractional viscoelastic constitutive equations that we studied in this work: Fractional Maxwell (`FM.ipynb`), Fractional Kelvin-Voigt (`FKV.ipynb`), and Fractional Three Component (`FTC.ipynb`, a.k.a. Zener) constitutive equations. A Jupyter Notebook for each of these cases are included.
 
@@ -19,7 +17,9 @@ In this project, the following packages are actively used:
 ## Hardware/OS tested
 The program was tested on an MBP M1 Max (64 GB RAM) running macOS Sonoma v14.2.1.
 
-## Background... ish
+## Background...
+
+Readily available consumer product Johnson's® Baby Shampoo was used for this investigation. The material is a surfactant solution with additional additives that form wormlike micelles (WLM) at room temperature. Details of components are provided in the accompanying table. This material was chosen not only for its ease of availability but for its rheological behavior as a TVE (Time-Viscosity-Elasticity) material typical of WLM solutions exhibiting shear thinning, viscoelasticity, and thermal dependence. Due to observed rheological differences between different shampoo bottles, all tests were performed from a single freshly opened bottle. Although model development for such materials has been successful, it is assumed in this work that no immediate model is available to describe the observables as this scenario is closest to a real-world case where an unknown sample is studied with little to no physical taxonomy.
 
 Suppose you have a viscoelastic material. Canonically, the simplest model that you can use to predict the material behavior (e.g., stress in rate-controlled rheometry) is the Maxwell viscoelastic model:
 ```math
