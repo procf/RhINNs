@@ -6,7 +6,6 @@ This is a TensorFlow implementation of multi-fidelity neural network platform to
 ## What to expect
 For each flow protocol, Jupyter Notebooks are included inside their corresponding folders along with the data. All notebooks are properly documented and tested on Google Colab.
 
-
 ## Software/package requirements
 In this project, the following packages are actively used:
 1. `python` v3.11.7, 
@@ -16,6 +15,9 @@ In this project, the following packages are actively used:
 
 ## Hardware/OS tested
 The program was tested on an MBP M1 Max (64 GB RAM) running macOS Sonoma v14.2.1.
+
+## The recommended way
+To kick off this work, I started from the simplest case, i.e., the steady shear rheometry. The same starting point is suggested, followed by stress growth, oscillatory, and finally the SAOS case. Feel free to reach out to me at saadat.m@northeastern.edu if you had any questions or thoughts.
 
 ## Background
 
