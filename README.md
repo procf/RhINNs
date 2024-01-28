@@ -1,5 +1,5 @@
 # Rheology-informed Machine Learning
-In this repo, We'll post our projects on rheology-informed neural networks (RhINNs).
+In this repo, We'll post our projects on rheology-informed machine learning. Feel free to reach out to me at saadat.m@northeastern.edu if you had any questions or thoughts.
 
 # Who we are
 We are a computational [lab](https://web.northeastern.edu/complexfluids/research/) at Northeastern University, Boston, MA (PI Professor [Safa Jamali](https://coe.northeastern.edu/people/jamali-safa/)). We are mostly interested in physics and rheology of matter. At the moment, our group has two main cores:
