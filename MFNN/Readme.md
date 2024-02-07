@@ -35,6 +35,6 @@ Predicting the response of complex fluids to different flow conditions has been 
 
 
 ## Contributors
-This project is a collaboration with the Wagner Group at the University of Delaware. This work was done by [Milad Saadat](https://scholar.google.com/citations?user=PPLvVmEAAAAJ&hl=en&authuser=1), Quent Hartt, [Norman Wagner](https://scholar.google.com/citations?user=YxgbdyQAAAAJ&hl=en), and [Safa Jamali](https://scholar.google.com/citations?user=D1asaYIAAAAJ&hl=en). Authors are thankful for insightful discussions with Dr. Mohammadamin Mahmoudabadbozchelou, and also acknowledge the support from the National Science Foundation’s DMREF
+This project is a collaboration with the Wagner Research Group at the University of Delaware. This work was done by [Milad Saadat](https://scholar.google.com/citations?user=PPLvVmEAAAAJ&hl=en&authuser=1), Quent Hartt, [Norman Wagner](https://scholar.google.com/citations?user=YxgbdyQAAAAJ&hl=en), and [Safa Jamali](https://scholar.google.com/citations?user=D1asaYIAAAAJ&hl=en). Authors are thankful for insightful discussions with Dr. Mohammadamin Mahmoudabadbozchelou, and also acknowledge the support from the National Science Foundation’s DMREF
 program through Award \#2118962.
 
