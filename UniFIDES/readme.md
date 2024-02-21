@@ -1,10 +1,10 @@
 # Universal Integer-Order and Fractional Integro-Differential Equation Solvers
 This project is submitted to the [Nature Machine Intelligence](https://www.nature.com/natmachintell/) and is currently under review. The work is titled "*UniFIDES: Universal Fractional Integro-Differential Equation Solvers.*"
 
-This is a TensorFlow implementation of multi-fidelity neural network platform to predict material response of four flow protocols, i.e., steady shear, stress growth, oscillatory shear (amplitude and frequency sweeps), and small/large amplitude oscillatory shear.
+This is a TensorFlow implementation of a robust, user-friendly platform to solve integer-order and fractional FIDEs in forward and inverse directions.
 
 ## What to expect
-For each flow protocol, Jupyter Notebooks are included inside their corresponding folders along with the data. All notebooks are properly documented and tested on Google Colab.
+In the provided notebook, two examples of Fredholm and Volterra equations are solved in the form of a forward problem.
 
 ## Software/package requirements
 In this project, the following packages are actively used:
@@ -14,10 +14,8 @@ In this project, the following packages are actively used:
 4. `pandas` v2.1.3 (for pre-/post-processing).
 
 ## Hardware/OS tested
-The program was tested on an MBP M1 Max (64 GB RAM) running macOS Sonoma v14.2.1.
+The program was tested on an MBP M1 Max (64 GB RAM) without GPU acceleration running macOS Sonoma v14.2.1 
 
-## The recommended way
-To kick off this work, I started from the simplest case, i.e., the steady shear rheometry. The same starting point is suggested, followed by stress growth, oscillatory, and finally the SAOS case. Feel free to reach out to me at saadat.m@northeastern.edu if you had any questions or thoughts.
 
 ## Background
 
@@ -31,10 +29,10 @@ In `SAOS`, the above approach failed to generalize properly. For this reason, we
 
 Here's the submission abstract: 
 
-Predicting the response of complex fluids to different flow conditions has been the focal point of rheology and is generally done via constitutive relations. There are, nonetheless, scenarios in which not much is known about the material mathematically, while data collection from samples is elusive, resource-intensive, or both. In such cases, meta-modeling of observables using a parametric surrogate model called multi-fidelity neural networks (MFNNs) may obviate the need for constitutive equation development by leveraging only a handful of high-fidelity (Hi-Fi) data collected from experiments (or high-resolution simulations) and an abundance of low-fidelity (Lo-Fi) data generated synthetically to compensate for Hi-Fi data scarcity. To this end, MFNNs are employed to meta-model the material responses of a thermo-viscoelastic (TVE) fluid, consumer product Johnson's® Baby Shampoo, under four flow protocols: steady shear, step growth, oscillatory, and small/large amplitude oscillatory shear (S/LAOS). By applying simple linear regression (without induction of any constitutive equation) on log-spaced Hi-Fi data, a series of Lo-Fi data were generated and found sufficient to obtain accurate material response recovery in terms of either interpolation or extrapolation for all flow protocols except for S/LAOS. Informing the MFNN platform with a linear constitutive model (Maxwell viscoelastic) however results in simultaneous interpolation and extrapolation capabilities in S/LAOS material response recovery. The role of data volume, flow type, and deformation range are discussed in detail, providing a practical pathway to multi-fidelity meta-modeling of different complex fluids.
-
+The development of data-driven approaches for solving differential equations has been followed by a plethora of applications in science and engineering across a multitude of disciplines and remains a central focus of active scientific inquiry. However, a large body of natural phenomena incorporates memory effects that are best described via fractional integro-differential equations (FIDEs), in which the integral or differential operators accept non-integer orders. Addressing the challenges posed by nonlinear FIDEs is a recognized difficulty, necessitating the application of generic methods with immediate practical relevance. This work introduces the Universal Fractional Integro-Differential Equation Solvers (UniFIDES), a comprehensive machine learning platform designed to expeditiously solve a variety of FIDEs in both forward and inverse directions, without the need for ad hoc manipulation of the equations. The effectiveness of UniFIDES is demonstrated through a collection of integer-order and fractional problems in science and engineering. Our results highlight UniFIDES' ability to accurately solve a wide spectrum of integro-differential equations and offer the prospect of using machine learning platforms universally for discovering and describing dynamical and complex systems.
 
 ## Contributors
-This project is a collaboration with the Wagner Research Group at the University of Delaware. This work was done by [Milad Saadat](https://scholar.google.com/citations?user=PPLvVmEAAAAJ&hl=en&authuser=1), Quent Hartt, [Norman Wagner](https://scholar.google.com/citations?user=YxgbdyQAAAAJ&hl=en), and [Safa Jamali](https://scholar.google.com/citations?user=D1asaYIAAAAJ&hl=en). Authors are thankful for insightful discussions with Dr. Mohammadamin Mahmoudabadbozchelou, and also acknowledge the support from the National Science Foundation’s DMREF
+This work was done by [Milad Saadat](https://scholar.google.com/citations?user=PPLvVmEAAAAJ&hl=en&authuser=1) and [Safa Jamali](https://scholar.google.com/citations?user=D1asaYIAAAAJ&hl=en). Authors are thankful for insightful discussions with Dr. Deepak Mangal, and
+also acknowledge the support from the National Science Foundation’s DMREF
 program through Award \#2118962.
 
