@@ -35,7 +35,7 @@ The provided notebook solves two instances of Fredholm and Volterra equations by
 \end{aligned}
 ```
 
-Here, $\left[ {}^{1} \mathcal{D}_x \right] $ is the derivative operator of order $\beta=1$, and $\left[ {}^1 \mathcal{I}_{-1/4}^{1/4} \right]$ is the integral operator of order $\alpha=1$. In fact, $\alpha$ and $\beta$ can be any real numbers. The exact solution reads $u(x) = 1 + \sin{x}$. This is a forward problem, and the objective is to find $u(x)$.
+Here, $`\left[ {}^{1} \mathcal{D}_x \right]`$ is the derivative operator of order $`\beta=1`$, and $`\left[ {}^1 \mathcal{I}_{-1/4}^{1/4} \right]`$ is the integral operator of order $\alpha=1$. In fact, $`\alpha`$ and $`\beta`$ can be any real numbers. The exact solution reads $`u(x) = 1 + \sin{x}`$. This is a forward problem, and the objective is to find $`u(x)`$.
 
 <img src="Case1_Integer_order_Fredholm.png" height="400">
 
