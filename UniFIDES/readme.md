@@ -25,7 +25,7 @@ Although machine learning platforms have achieved notable success in solving dif
 
 Here, we introduce a physics-aware platform named UniFIDES, designed to solve FIDEs for both forward and inverse problems. Agnostic to nonlinearity and the type of problem in nature, UniFIDES is tested on a variety of Fredholm and Volterra integer-order and fractional cases across a broad range of scientific applications and remained competitive in terms of accuracy and computation cost. With its out-of-the-box functionality, UniFIDES may be readily streamlined with current computational pipelines to augment machine intelligence.
 
-Two provided notebook solves two instances of Fredholm and 
+The provided notebook solves two instances of Fredholm and Volterra equations by toggling the `Type` switch in the code. Let's begin with the former, which is an integer-order nonlinear 1D Fredholm IDE with applications in diffusion processes and quantum mechanics:
 
 ```math
 \begin{aligned}
@@ -34,6 +34,10 @@ Two provided notebook solves two instances of Fredholm and
 &u\left( -\frac{\pi}{2} \right)=0
 \end{aligned}
 ```
+
+Here, $\left[ {}^{1} \mathcal{D}_x \right]$ is the derivative operator of order $\beta=1$, and $\left[ {}^1 \mathcal{I}_{-1/4}^{1/4} \right]$ is the integral operator of order $\alpha=1$. In fact, $\alpha$ and $\beta$ can be any real numbers. The exact solution reads $u(x) = 1 + \sin{x}$. This is a forward problem, and the objective is to find $u(x)$. 
+
+![Case 1](Case 1, Fredholm, Integer-order.png)
 
 
 Here's the submission abstract: 
