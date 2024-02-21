@@ -27,13 +27,13 @@ Here, we introduce a physics-aware platform named UniFIDES, designed to solve FI
 
 Two provided notebook solves two instances of Fredholm and 
 
-$$
+```math
 \begin{aligned}
 &\left[ {}^{1} \mathcal{D}_x \right] u(x) = \cos{x} - x + \frac{1}{4}\left[ {}^1 \mathcal{I}_{-1/4}^{1/4} \right] xt u^2(t) \, \mathrm{d}t \\
 &x \in \left[ -\frac{\pi}{2}, \frac{\pi}{2} \right]\\
 &u\left( -\frac{\pi}{2} \right)=0
 \end{aligned}
-$$
+```
 
 
 Here's the submission abstract: 
