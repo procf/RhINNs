@@ -43,7 +43,7 @@ Here, $`\left[ {}^{1} \mathcal{D}_x \right]`$ is the derivative operator of orde
 
 <img src="Case1_Integer_order_Fredholm.png" height="400">
 
-Case 5 in this submission is a 1D Volterra fractional integral equation:
+Case 5 in this submission is a 1D Volterra fractional integral equation (FIE):
 
 ```math
 \begin{equation}
@@ -56,6 +56,10 @@ Case 5 in this submission is a 1D Volterra fractional integral equation:
 \right.
 \end{equation}
 ```
+
+The integral operator in this case has a fractional order ($`\alpha = 0.5`$), and the exact solution reads $`u(x) = \sqrt{\pi}(1 + x)^{-1.5}`$. Such FIEs are frequently seen in crystal growth and heat conduction. By setting `Type='Volterra'`, this FIE is solved by UniFIDES, whose prediction is plotted below:
+
+<img src="Case5_Fractional_order_Volterra.png" height="400">
 
 
 
