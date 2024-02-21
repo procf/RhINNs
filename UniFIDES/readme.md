@@ -28,11 +28,15 @@ Here, we introduce a physics-aware platform named UniFIDES, designed to solve FI
 The provided notebook solves two instances of Fredholm and Volterra equations by toggling the `Type` switch in the code. Let's begin with the former, which is an integer-order nonlinear 1D Fredholm IDE with applications in diffusion processes and quantum mechanics:
 
 ```math
+\begin{equation}
+\left\{
 \begin{aligned}
 &\left[ {}^{1} \mathcal{D}_x \right] u(x) = \cos{x} - x + \frac{1}{4}\left[ {}^1 \mathcal{I}_{-1/4}^{1/4} \right] xt u^2(t) \, \mathrm{d}t \\
 &x \in \left[ -\frac{\pi}{2}, \frac{\pi}{2} \right]\\
 &u\left( -\frac{\pi}{2} \right)=0
 \end{aligned}
+\right.
+\end{equation}
 ```
 
 Here, $`\left[ {}^{1} \mathcal{D}_x \right]`$ is the derivative operator of order $`\beta=1`$, and $`\left[ {}^1 \mathcal{I}_{-1/4}^{1/4} \right]`$ is the integral operator of order $\alpha=1$ between $`-1/4`$ and $`1/4`$. In fact, $`\alpha`$ and $`\beta`$ can be any real numbers. The exact solution reads $`u(x) = 1 + \sin{x}`$. This is a forward problem, and the objective is to find $`u(x)`$. This problem is implemented in its continuous form in the notebook, and UniFIDES' prediction is plotted below.
@@ -42,11 +46,15 @@ Here, $`\left[ {}^{1} \mathcal{D}_x \right]`$ is the derivative operator of orde
 Case 5 in this submission is a 1D Volterra fractional integral equation:
 
 ```math
+\begin{equation}
+\left\{
 \begin{aligned}
-&u(x) = \sqrt{\pi}\left(1+x\right)^{-1.5} - 0.02\frac{x^3}{1+x} + 0.01x^{2.5}\left[ {}^{0.5} \mathcal{I}_{0}^{x} \right] u(t) \diff t\\
+&u(x) = \sqrt{\pi}\left(1+x\right)^{-1.5} - 0.02\frac{x^3}{1+x} + 0.01x^{2.5}\left[ {}^{0.5} \mathcal{I}_{0}^{x} \right] u(t) \mathrm{d} t\\
 &x \in \left[ 0, 4 \right]\\
 &u\left(0\right)=\sqrt{\pi}
 \end{aligned}
+\right.
+\end{equation}
 ```
 
 
