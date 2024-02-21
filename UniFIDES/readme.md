@@ -19,13 +19,22 @@ The program was tested on an MBP M1 Max (64 GB RAM) without GPU acceleration run
 
 ## Background
 
-In practice, commonly one encounters a situation where a material response is complex, and the appropriate governing constitutive models are not entirely known. For instance, geopolymer materials, which are a class of amorphous, inorganic polymers, often exhibit intricate and nonlinear behaviors that evolve with time as the system undergoes reaction. Industrially-relevant complex fluids such as consumer products are virtually always multi-component systems that are far from trivial/generalizable with respect to their rheological behavior. In other words, application of conventional RhINN to these fluids may be restricted by the absence of an immediate constitutive model that could guide the training process. This issue escalates as the objective material response gets more complex, while efforts such as incorporating more complex ML models more often than not add incremental improvement to model generality.
+Solving forward and inverse problems in the form of differential equations, which govern the spatio-temporal evolution of numerous dynamical systems across scientific and engineering disciplines, has been the core of extensive research endeavors for decades. Science-aware machine learning tools, nonetheless, have proven transformative over the past few years in relaxing many traditional constraints required to solve such systems numerically, such as numerical discretization, mesh generation, stability conditions, and more.
 
-In such cases, multi-fidelity neural networks (MFNNs) offer a versatile solution by amalgamating data from various sources and fidelity levels. While high-fidelity (Hi-Fi) observables are difficult to gather (through, for instance, rheometry or flow simulations) and usually limited in quantity, low-fidelity (Lo-Fi) data that only approximately mimic the material response are abundant. Low-fidelity data can be obtained from simulations with simplified models and empirical laws or generated synthetically from the Hi-Fi data (or other reliable sources). In other words, the need for physical intuition is remedied by introducing inexpensive data that do not necessitate precise experimentation or simulations.
+Although machine learning platforms have achieved notable success in solving differential equations, there is still a significant gap in developing universal machine learning solutions for integro-differential equations. This gap widens further when considering FIDEs, in which the integral and derivative operators may accept any real numbers. FIDEs are particularly challenging to solve yet are fundamental in modeling critical phenomena such as the stock market, pandemic spread, and population growth of species.
 
-In `SteadyState`, `StressGrowth`, and `Oscillatory` cases, we assumed that no physical intuition is known whatsoever; all we had was the Hi-Fi data. Based on those Hi-Fi data, we generated low-quality, abundant Lo-Fi data to offset the lack of physics.
+Here, we introduce a physics-aware platform named UniFIDES, designed to solve FIDEs for both forward and inverse problems. Agnostic to nonlinearity and the type of problem in nature, UniFIDES is tested on a variety of Fredholm and Volterra integer-order and fractional cases across a broad range of scientific applications and remained competitive in terms of accuracy and computation cost. With its out-of-the-box functionality, UniFIDES may be readily streamlined with current computational pipelines to augment machine intelligence.
 
-In `SAOS`, the above approach failed to generalize properly. For this reason, we employed a simple linear model, i.e., the Maxwell VE model, to generate Lo-Fi stress loops. Throughout this work, we wanted to optimize the number of experiments needed to train MFNNs. Therefore, we systematically masked experiments in generation of Lo-Fi data and also in NN training. Once a set is excluded from one, it is masked from the other, too.
+Two provided notebook solves two instances of Fredholm and 
+
+$$
+\begin{aligned}
+&\left[ {}^{1} \mathcal{D}_x \right] u(x) = \cos{x} - x + \frac{1}{4}\left[ {}^1 \mathcal{I}_{-1/4}^{1/4} \right] xt u^2(t) \, \mathrm{d}t \\
+&x \in \left[ -\frac{\pi}{2}, \frac{\pi}{2} \right]\\
+&u\left( -\frac{\pi}{2} \right)=0
+\end{aligned}
+$$
+
 
 Here's the submission abstract: 
 
