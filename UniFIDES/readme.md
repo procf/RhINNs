@@ -1,5 +1,5 @@
-# UniFIDES: Universal Fractional Integro-Differential Equation Solvers
-This project is submitted to the [Nature Machine Intelligence](https://www.nature.com/natmachintell/) and is currently under review. The work is titled "*Data-driven constitutive meta-modeling of non-linear rheology via multi-fidelity neural networks.*"
+# Universal Integer-Order and Fractional Integro-Differential Equation Solvers
+This project is submitted to the [Nature Machine Intelligence](https://www.nature.com/natmachintell/) and is currently under review. The work is titled "*UniFIDES: Universal Fractional Integro-Differential Equation Solvers.*"
 
 This is a TensorFlow implementation of multi-fidelity neural network platform to predict material response of four flow protocols, i.e., steady shear, stress growth, oscillatory shear (amplitude and frequency sweeps), and small/large amplitude oscillatory shear.
 
