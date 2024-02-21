@@ -7,7 +7,9 @@ This is a TensorFlow implementation of a robust, user-friendly platform to solve
 In the provided notebook, two examples of Fredholm and Volterra equations are solved in the form of a forward problem.
 
 Open UniFIDES in Google Colab:
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/procf/RhINNs/blob/main/UniFIDES/UniFIDES.ipynb)
+<a href="https://colab.research.google.com/github/procf/RhINNs/blob/main/UniFIDES/UniFIDES.ipynb" target="_blank">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+</a>
 
 ## Software/package requirements
 In this project, the following packages are actively used:
