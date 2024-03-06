@@ -1,5 +1,5 @@
 # Universal Integer-Order and Fractional Integro-Differential Equation Solvers
-This project is submitted to the [Nature Machine Intelligence](https://www.nature.com/natmachintell/). The work is titled "*UniFIDES: Universal Fractional Integro-Differential Equation Solvers.*"
+This project is currently submitted to [Nature Machine Intelligence](https://www.nature.com/natmachintell/). The work is titled "*UniFIDES: Universal Fractional Integro-Differential Equation Solvers.*"
 
 This is a TensorFlow implementation of a robust, user-friendly platform to solve integer-order and fractional FIDEs in forward and inverse directions.
 
