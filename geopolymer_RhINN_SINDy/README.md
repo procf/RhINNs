@@ -49,9 +49,7 @@ paper from `results/coefficients/`, so they do not depend on re-running the trai
 
 The training notebooks (01, 02, 04, 05, 08a) train one network per sample age with the settings
 used for the paper; each age takes 30–40 min on a laptop CPU. They write to
-`results/retrained/` after every age and never overwrite the published tables. Network
-initialisation and collocation sampling are random, so retrained coefficients are not
-identical from run to run.
+`results/retrained/` after every age and never overwrite the published tables.
 
 ### Running a training
 
