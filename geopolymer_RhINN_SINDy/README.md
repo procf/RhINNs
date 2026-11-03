@@ -101,9 +101,8 @@ figures/                  figures written by the notebooks
 ## Data
 
 Material names follow the paper. The raw files used different (lab) names, e.g. paper GP5 was
-GP7 in the lab, and the instrument metadata inside the files still shows them; the mapping, the
-measurement protocols and the changes made to the original exports are described in
-[`data/README.md`](data/README.md).
+GP7 in the lab, and the instrument metadata inside the files still shows them. The mapping, the
+compositions and the measurement protocols are described in [`data/README.md`](data/README.md).
 
 ## Citation
 
