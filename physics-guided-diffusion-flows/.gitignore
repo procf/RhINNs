@@ -1,0 +1,24 @@
+# Data, checkpoints and outputs are not part of the repository
+data/
+pretrained/
+training-runs*/
+results/
+figures/
+*.npy
+*.npz
+*.mat
+*.csv
+*.pkl
+*.pt
+*.pth
+*.gif
+*.out
+*.err
+
+# Python / OS
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.DS_Store
+.vscode/
+.idea/

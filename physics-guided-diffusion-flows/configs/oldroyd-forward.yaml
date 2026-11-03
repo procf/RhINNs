@@ -1,0 +1,36 @@
+# Forward problem for the Oldroyd-B (viscoelastic) flow past a triangle.
+# Paths are relative to the repository root. Run with:
+#   python -m scripts.generate_oldroyd --config configs/oldroyd-forward.yaml
+data:
+  name: Oldroyd-Triangle
+  datapath: data/Oldroyd-merged-test/Wi_0p4528.npy   # one raw (un-normalized) test sample
+  # physical domain sampled by the 128x128 grid (for the continuity coefficient K)
+  x_min: -4.0
+  x_max: 0.0
+  y_min: -1.0
+  y_max: 1.0
+generate:
+  device: cuda
+  batch_size: 1
+  seed: 0
+  # EDM sampler (Karras schedule)
+  sigma_min: 0.002
+  sigma_max: 80.0
+  rho: 7.0
+  # snapshots used and normalization extrema, written by data_preparation/prepare_oldroyd.py
+  t_initial_idx: 6        # t0 = 0.6 s
+  t_final_idx: 100        # T  = 10 s
+  u_min: -0.0065623993152239
+  u_max: 0.0307243212103104
+  v_min: -0.0168466825982682
+  v_max: 0.0237097373364003
+  # guidance weights
+  zeta_obs_a: 500       # initial state (observed everywhere)
+  zeta_obs_u: 0.1       # final state (no-slip on the triangle)
+  zeta_pde: 0.01        # continuity residual (active for the last 20% of the steps)
+  tag: ""               # optional suffix of output file names
+  outdir: results/oldroyd
+test:
+  iterations: 1000
+  pre-trained: pretrained/oldroyd/network-snapshot-000502.pkl
+  problem_type: forward

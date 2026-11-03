@@ -1,0 +1,39 @@
+# Forward problem for the Newtonian flow past a cylinder.
+# Paths are relative to the repository root. Run with:
+#   python -m scripts.generate_cylinder --config configs/cylinder-forward.yaml
+data:
+  name: NS-Bounded
+  datapath: data/NS-merged-test/u0_0p17388.npy   # one raw (un-normalized) test sample
+  offset: 0
+  # cylinder no-slip mask on the 128x128 grid (centre and radius in grid points)
+  c_x: 63
+  c_y: 63
+  radius: 4
+  # physical domain sampled by the 128x128 grid (for the continuity coefficient K)
+  x_min: -5.0
+  x_max: 5.0
+  y_min: -1.0
+  y_max: 1.0
+generate:
+  device: cuda
+  batch_size: 1
+  seed: 0
+  # EDM sampler (Karras schedule)
+  sigma_min: 0.002
+  sigma_max: 80
+  rho: 7
+  # normalization extrema written by data_preparation/prepare_cylinder.py
+  u_min: -0.685616714424399
+  u_max: 1.12696000452877
+  v_min: -0.685582511763572
+  v_max: 0.667654117788842
+  # guidance weights
+  zeta_obs_a: 10        # initial state (observed everywhere)
+  zeta_obs_u: 0.5       # final state (no-slip on the cylinder)
+  zeta_pde: 1           # continuity residual (active for the last 20% of the steps)
+  tag: ""               # optional suffix of output file names
+  outdir: results/cylinder
+test:
+  iterations: 2000
+  pre-trained: pretrained/cylinder/network-snapshot-001200.pkl
+  problem_type: forward

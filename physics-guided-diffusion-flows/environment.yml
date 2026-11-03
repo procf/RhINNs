@@ -1,0 +1,23 @@
+name: pgdiff-flows
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+dependencies:
+  - python>=3.9, <3.12
+  - pip
+  - numpy>=1.20
+  - scipy>=1.7.1
+  - pandas
+  - matplotlib
+  - pytorch>=1.13
+  - click>=8.0
+  - pillow>=8.3.1
+  - psutil
+  - requests
+  - tqdm
+  - imageio
+  - pyyaml
+  - pip:
+    - imageio-ffmpeg>=0.4.3
+    - pyspng
