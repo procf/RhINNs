@@ -12,6 +12,7 @@ figures/
 *.pt
 *.pth
 *.gif
+!docs/*.gif
 *.out
 *.err
 

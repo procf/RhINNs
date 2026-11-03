@@ -5,6 +5,15 @@ This repository has the code for training and sampling physics-guided diffusion 
 - **Newtonian flow past a cylinder**: incompressible Navier–Stokes, with the inlet velocity varied.
 - **Oldroyd-B flow past a triangle**: a viscoelastic flow, with the Weissenberg number varied (Wi = 0.1–1.0).
 
+<p align="center">
+  <img src="docs/cylinder_u0_0p32.gif" width="80%" alt="Newtonian flow past a cylinder"><br>
+  <em>Newtonian flow past a cylinder (reference simulation, inlet velocity 0.32 m/s)</em>
+</p>
+<p align="center">
+  <img src="docs/oldroyd_Wi_0p45.gif" width="80%" alt="Oldroyd-B flow past a triangle"><br>
+  <em>Oldroyd-B flow past a triangle (reference simulation, Wi = 0.45)</em>
+</p>
+
 An unconditional EDM model is trained on the joint distribution of the initial and final velocity fields, $(u_0, v_0, u_T, v_T)$ on a 128×128 grid. At sampling time, the reverse diffusion is guided by three terms:
 
 - the observed initial state (weight $\zeta_a$)
@@ -127,7 +136,8 @@ python analysis/plot_metrics.py --case oldroyd \
 
 python analysis/plot_divergence.py                    # D(t) and the choice of t0 (needs raw data)
 python analysis/plot_training_loss.py training-runs/cylinder/*/stats.jsonl
-python analysis/make_velocity_animation.py data/raw/oldroyd/Wi=0.4528.npz
+python analysis/make_velocity_animation.py data/raw/cylinder/u0=0.32137.csv --stride 5 --dpi 75
+python analysis/make_velocity_animation.py data/raw/oldroyd/Wi=0.4528.npz --stride 2 --dpi 75 --fps 8
 ```
 
 The wake correlation $\rho$ is the Pearson correlation of $u_y$ between the generated and reference fields downstream of the obstacle (x > 0.5 for the cylinder, x > −2.7 for the triangle). It is +1 when the vortex street is in phase, 0 when the two are unrelated and −1 when they are in antiphase.
