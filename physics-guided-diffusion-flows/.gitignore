@@ -12,7 +12,7 @@ figures/
 *.pt
 *.pth
 *.gif
-!docs/*.gif
+!assets/*.gif
 *.out
 *.err
 

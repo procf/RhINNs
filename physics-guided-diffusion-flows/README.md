@@ -6,11 +6,11 @@ This repository has the code for training and sampling physics-guided diffusion 
 - **Oldroyd-B flow past a triangle**: a viscoelastic flow, with the Weissenberg number varied (Wi = 0.1–1.0).
 
 <p align="center">
-  <img src="docs/cylinder_u0_0p32.gif" width="80%" alt="Newtonian flow past a cylinder"><br>
+  <img src="assets/cylinder_u0_0p32.gif" width="80%" alt="Newtonian flow past a cylinder"><br>
   <em>Newtonian flow past a cylinder (reference simulation, inlet velocity 0.32 m/s)</em>
 </p>
 <p align="center">
-  <img src="docs/oldroyd_Wi_0p45.gif" width="80%" alt="Oldroyd-B flow past a triangle"><br>
+  <img src="assets/oldroyd_Wi_0p45.gif" width="80%" alt="Oldroyd-B flow past a triangle"><br>
   <em>Oldroyd-B flow past a triangle (reference simulation, Wi = 0.45)</em>
 </p>
 
