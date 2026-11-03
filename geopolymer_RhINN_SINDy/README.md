@@ -9,8 +9,9 @@ Code and data for
 Rheology-informed neural networks (RhINNs) are combined with sparse identification of nonlinear
 dynamics (SINDy/STRidge) to find time-dependent scalar constitutive equations,
 
-$$\dot\gamma = c_0 + c_1\sigma + c_2\dot\sigma + c_3\sigma^2 + c_4\sigma\dot\sigma
-+ c_5\dot\sigma\sigma^2 + c_6\sigma^3 + c_7\dot\sigma\sigma^3 ,$$
+```math
+\dot{\gamma} = c_0 + c_1\sigma + c_2\dot{\sigma} + c_3\sigma^2 + c_4\sigma\dot{\sigma} + c_5\dot{\sigma}\sigma^2 + c_6\sigma^3 + c_7\dot{\sigma}\sigma^3
+```
 
 for two metakaolin geopolymers (GP1, GP5) from small- and large-amplitude oscillatory data, join
 the linear and nonlinear regimes through a critical stress, and transfer the model to three
@@ -33,7 +34,7 @@ jupyter notebook notebooks/
 
 | Paper | Notebook | Output |
 |-------|----------|--------|
-| Fig. 1, σ_cr and t_cr | `00_amplitude_sweeps` | `figures/fig01_amplitude_sweeps.png`, `results/critical_points.csv` |
+| Fig. 1, σ<sub>cr</sub> and t<sub>cr</sub> | `00_amplitude_sweeps` | `figures/fig01_amplitude_sweeps.png`, `results/critical_points.csv` |
 | Table 3 (GP1) | `01_GP1_SAOS_training` | `results/retrained/GP1_SAOS.csv` |
 | Table 4 | `02_GP1_LAOS_training` | `results/retrained/GP1_LAOS_<run>.csv` |
 | Figs. 3, 5, 7 | `03_GP1_post_processing` | `figures/fig03_*`, `fig05_*`, `fig07_*` |

@@ -22,7 +22,7 @@ names, which still appear inside the files' `Details` sheets.
 | `GP1_LAOS_10Pa.xlsx` | Stress-controlled LAOS, σ₀ = 10 Pa, ω = 1 rad/s, one `Sine Strain - n` sheet per measurement, `Time sweep - n` sheets in between | Table 4, Figs. 5, 7 | `GP1_lissajous_10pa_11_8_24.xlsx` |
 | `GP5_LAOS_100Pa.xlsx` | Stress-controlled LAOS, σ₀ = 100 Pa, ω = 1 rad/s | Table 5, Figs. 6, 8 | `GP7_lissajous_100pa_11_5_24.xlsx` (reduced, see below) |
 | `GP1_3ITT.xlsx`, `GP5_3ITT.xlsx` | Multi-interval thixotropy test: 100 s⁻¹ peak holds and LVE time sweeps | Fig. 9 | `GP1_3ITT_100s1_11_4_24.xlsx`, `GP7_3ITT_100s1_11_5_24.xlsx` |
-| `amplitude_sweeps_GP1-GP5.xlsx` | Stress amplitude sweeps, 0.01–1000 Pa, ω = 10 rad/s; repeated trials for GP4 and GP5 (Fig. 1 uses `Trial3`) | Fig. 1, σ_cr, Fig. 10 | `PrintabilityAmplitudeSweeps.xlsx` |
+| `amplitude_sweeps_GP1-GP5.xlsx` | Stress amplitude sweeps, 0.01–1000 Pa, ω = 10 rad/s; repeated trials for GP4 and GP5 (Fig. 1 uses `Trial3`) | Fig. 1, σ<sub>cr</sub>, Fig. 10 | `PrintabilityAmplitudeSweeps.xlsx` |
 | `3ITT_GP1-GP5.xlsx` | Three-interval thixotropy test (1000 % pre-shear, LVE at 13 rad/s, 500 % break-down, LVE) | Fig. 10 | `Printability3ITT.xlsx` |
 
 The column headers are the TRIOS names (`Time` in s, `Stress` and `Oscillation stress` in Pa,
