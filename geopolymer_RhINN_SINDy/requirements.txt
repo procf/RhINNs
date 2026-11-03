@@ -1,0 +1,11 @@
+# Tested with Python 3.10 and the versions in brackets.
+# TensorFlow < 2.16 is required: the solvers use tf.keras.optimizers.legacy.
+tensorflow>=2.9,<2.16        # 2.9.1
+numpy>=1.22,<2               # 1.23.1
+scipy>=1.8                   # 1.9.0
+pandas>=1.4                  # 1.4.3
+matplotlib>=3.5              # 3.5.1
+openpyxl>=3.0                # 3.1.0
+pyDOE>=0.3.8                 # 0.3.8
+scikit-learn>=1.0            # 1.4.2
+jupyter

@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rhinn_sindy"
+version = "1.0.0"
+description = "RhINN + SINDy discovery of time-dependent constitutive equations for metakaolin geopolymers"
+readme = "README.md"
+requires-python = ">=3.9,<3.12"
+license = { file = "LICENSE" }
+
+[tool.setuptools]
+packages = ["rhinn_sindy"]
