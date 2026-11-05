@@ -3,7 +3,7 @@
 #   python -m scripts.generate_cylinder --config configs/cylinder-forward.yaml
 data:
   name: NS-Bounded
-  datapath: data/NS-merged-test/u0_0p17388.npy   # one raw (un-normalized) test sample
+  datapath: data/newtonian/test/u0_0p17388.npy   # one raw (un-normalized) test sample
   offset: 0
   # cylinder no-slip mask on the 128x128 grid (centre and radius in grid points)
   c_x: 63

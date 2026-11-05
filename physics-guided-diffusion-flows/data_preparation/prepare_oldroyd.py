@@ -55,8 +55,8 @@ def normalize(x, xmin, xmax):
 def main():
     p = argparse.ArgumentParser(description=__doc__.strip().splitlines()[0])
     p.add_argument("--raw-dir", default="data/raw/oldroyd", help="Folder with the Wi=*.npz files.")
-    p.add_argument("--train-dir", default="data/Oldroyd-merged")
-    p.add_argument("--test-dir", default="data/Oldroyd-merged-test")
+    p.add_argument("--train-dir", default="data/oldroyd/train")
+    p.add_argument("--test-dir", default="data/oldroyd/test")
     p.add_argument("--config", default="configs/oldroyd-forward.yaml")
     p.add_argument("--t-initial-idx", type=int, default=None,
                    help="Initial snapshot index; if omitted, chosen from the divergence study.")

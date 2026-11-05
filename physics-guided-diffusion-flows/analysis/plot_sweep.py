@@ -23,8 +23,8 @@ from matplotlib.colors import TwoSlopeNorm
 
 from common import Cylinder, Triangle, load_generated, load_ground_truth, set_style, show_field
 
-DEFAULTS = {"cylinder": dict(results="results/cylinder", gt="data/NS-merged-test"),
-            "oldroyd": dict(results="results/oldroyd", gt="data/Oldroyd-merged-test")}
+DEFAULTS = {"cylinder": dict(results="results/cylinder", gt="data/newtonian/test"),
+            "oldroyd": dict(results="results/oldroyd", gt="data/oldroyd/test")}
 
 
 def plot_sample(case, gt, columns, out_path, title=None):

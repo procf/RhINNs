@@ -24,8 +24,8 @@ import numpy as np
 
 from common import Cylinder, Triangle, load_generated, load_ground_truth, metrics, set_style
 
-DEFAULTS = {"cylinder": dict(results="results/cylinder", gt="data/NS-merged-test"),
-            "oldroyd": dict(results="results/oldroyd", gt="data/Oldroyd-merged-test")}
+DEFAULTS = {"cylinder": dict(results="results/cylinder", gt="data/newtonian/test"),
+            "oldroyd": dict(results="results/oldroyd", gt="data/oldroyd/test")}
 PANELS = [("err_final", "Relative error, final field", True),
           ("err_ic", "Relative error, initial field", True),
           ("rho", r"Wake correlation $\rho$", False)]

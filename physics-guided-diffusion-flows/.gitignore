@@ -1,10 +1,15 @@
-# Data, checkpoints and outputs are not part of the repository
-data/
+# Raw simulations, checkpoints and outputs are not part of the repository.
+# The prepared .npy datasets in data/newtonian/ and data/oldroyd/ are included.
+data/raw/
 pretrained/
 training-runs*/
 results/
 figures/
 *.npy
+!data/newtonian/train/*.npy
+!data/newtonian/test/*.npy
+!data/oldroyd/train/*.npy
+!data/oldroyd/test/*.npy
 *.npz
 *.mat
 *.csv

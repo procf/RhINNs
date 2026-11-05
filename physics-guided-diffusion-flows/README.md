@@ -22,7 +22,7 @@ An unconditional EDM model is trained on the joint distribution of the initial a
 
 The code builds on **[DiffusionPDE](https://github.com/generativepde/DiffusionPDE)** ([Huang et al., 2024](https://arxiv.org/abs/2406.17763)), which in turn builds on **[EDM](https://github.com/NVlabs/edm)** ([Karras et al., 2022](https://arxiv.org/abs/2206.00364)). Please cite both works if you use this code (see [Citation](#citation)).
 
-> **Data and trained models are not included.** The simulation datasets come from an unpublished study and will be released with the paper. The scripts below show how the data is prepared, so the pipeline can be reproduced with your own simulations in the same format.
+> **The prepared datasets are included** in [data/](data/) (about 130 MB), so you can train and sample right away. The raw COMSOL simulations (about 16 GB) and the trained models are not included.
 
 ## What is changed relative to DiffusionPDE
 
@@ -39,6 +39,7 @@ The code builds on **[DiffusionPDE](https://github.com/generativepde/DiffusionPD
 ## Repository layout
 
 ```
+data/               prepared training and test sets (.npy)
 configs/            sampling configs (paths, domain, normalization, guidance weights)
 data_preparation/   raw simulations -> normalized training / raw test .npy files
 scripts/            physics-guided sampling (one script per case)
@@ -58,7 +59,20 @@ Run all commands from the repository root. If Python cannot find `dnnlib` or `to
 
 ## 1. Data
 
-Expected raw data layout (not included):
+The prepared datasets are in the repository:
+
+```
+data/newtonian/train/   150 samples, normalized to [-1, 1]   u0_<inlet velocity>.npy
+data/newtonian/test/    150 samples, physical units (m/s)
+data/oldroyd/train/    178 samples, normalized to [-1, 1]   Wi_<Wi>.npy
+data/oldroyd/test/      31 samples, physical units (m/s)
+```
+
+Each file is one `(128, 128, 4)` float32 array `[u0, v0, uT, vT]`: the velocity components at the initial time t₀ and the final time T, on a uniform 128×128 grid over the domain. The domains are x ∈ [-5, 5], y ∈ [-1, 1] for the cylinder (radius 0.3, centred at the origin) and x ∈ [-4, 0], y ∈ [-1, 1] for the triangle. Points inside the obstacle are zero. In the file names, `p` stands for the decimal point (`u0_0p17388` is an inlet velocity of 0.17388 m/s). The normalization extrema needed to map the training data back to m/s are in the configs (`u_min`, `u_max`, `v_min`, `v_max`).
+
+### Preparing the data from raw simulations
+
+You only need this to rebuild the datasets or to use your own simulations. Expected raw data layout (not included):
 
 ```
 data/raw/cylinder/u0=<inlet velocity>.csv    COMSOL export: x, y, "u (m/s) @ t=...", "v (m/s) @ t=..."
@@ -72,7 +86,7 @@ python data_preparation/prepare_cylinder.py --raw-dir data/raw/cylinder
 python data_preparation/prepare_oldroyd.py  --raw-dir data/raw/oldroyd
 ```
 
-Each simulation becomes one `(128, 128, 4)` array `[u0, v0, uT, vT]`. Training samples are scaled to [-1, 1] and go to `data/NS-merged/` and `data/Oldroyd-merged/`. Test samples stay in physical units and go to `data/NS-merged-test/` and `data/Oldroyd-merged-test/`. The scripts write the normalization extrema (and, for Oldroyd-B, the snapshot indices) into the matching config.
+Training samples are scaled to [-1, 1] and go to `data/newtonian/train/` and `data/oldroyd/train/`. Test samples stay in physical units and go to `data/newtonian/test/` and `data/oldroyd/test/`. The scripts write the normalization extrema (and, for Oldroyd-B, the snapshot indices) into the matching config.
 
 **Choice of the initial time.**
 - **Cylinder:** 301 snapshots (Δt = 0.01 s, T = 3 s). The CSV headers round time to one decimal, so the first column labelled `t=0.2` is actually t₀ = 0.16 s.
@@ -87,12 +101,12 @@ Each simulation becomes one `(128, 128, 4)` array `[u0, v0, uT, vT]`. Training s
 ```bash
 # Newtonian / cylinder
 torchrun --standalone --nproc_per_node=1 train.py --outdir=training-runs/cylinder \
-    --data=data/NS-merged --cond=0 --arch=ddpmpp --batch=15 --tick=10 --snap=25 \
+    --data=data/newtonian/train --cond=0 --arch=ddpmpp --batch=15 --tick=10 --snap=25 \
     --dump=100 --duration=300 --ema=0.05
 
 # Oldroyd-B / triangle
 torchrun --standalone --nproc_per_node=1 train.py --outdir=training-runs/oldroyd \
-    --data=data/Oldroyd-merged --cond=0 --arch=ddpmpp --batch=64 --tick=10 --snap=10 \
+    --data=data/oldroyd/train --cond=0 --arch=ddpmpp --batch=64 --tick=10 --snap=10 \
     --dump=100 --duration=20 --ema=0.05
 ```
 
@@ -112,7 +126,7 @@ Any of these options overrides the config: `--datapath`, `--pretrained`, `--iter
 ```bash
 for za in 10 20 50 100; do
   python -m scripts.generate_cylinder --config configs/cylinder-forward.yaml \
-      --datapath data/NS-merged-test/u0_0p32137.npy --zeta-obs-a $za --seed 0
+      --datapath data/newtonian/test/u0_0p32137.npy --zeta-obs-a $za --seed 0
 done
 ```
 
@@ -120,7 +134,7 @@ Each run writes these files to `generate.outdir`:
 - `ns_bounded_uv_results[_tri]_<sample>_seed<S>_za<Z><tag>.mat`: the generated initial field `a` and final field `u`, in physical units.
 - `ns_bounded_logs[_tri]_<...>.npz`: the losses and gradient norms at each sampling step.
 
-On SLURM: `sbatch slurm/generate.sbatch oldroyd --datapath data/Oldroyd-merged-test/Wi_0p9993.npy --seed 2`.
+On SLURM: `sbatch slurm/generate.sbatch oldroyd --datapath data/oldroyd/test/Wi_0p9993.npy --seed 2`.
 
 ## 4. Analysis
 

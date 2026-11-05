@@ -25,13 +25,13 @@ export PYTHONPATH="$PWD:${PYTHONPATH:-}"
 case "$CASE" in
   cylinder)
     torchrun --standalone --nproc_per_node=1 train.py \
-      --outdir=training-runs/cylinder --data=data/NS-merged \
+      --outdir=training-runs/cylinder --data=data/newtonian/train \
       --cond=0 --arch=ddpmpp --batch=15 --tick=10 --snap=25 --dump=100 \
       --duration=300 --ema=0.05
     ;;
   oldroyd)
     torchrun --standalone --nproc_per_node=1 train.py \
-      --outdir=training-runs/oldroyd --data=data/Oldroyd-merged \
+      --outdir=training-runs/oldroyd --data=data/oldroyd/train \
       --cond=0 --arch=ddpmpp --batch=64 --tick=10 --snap=10 --dump=100 \
       --duration=20 --ema=0.05
     ;;

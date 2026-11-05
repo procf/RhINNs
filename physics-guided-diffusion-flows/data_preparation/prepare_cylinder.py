@@ -55,8 +55,8 @@ def normalize(x, xmin, xmax):
 def main():
     p = argparse.ArgumentParser(description=__doc__.strip().splitlines()[0])
     p.add_argument("--raw-dir", default="data/raw/cylinder", help="Folder with the u0=*.csv files.")
-    p.add_argument("--train-dir", default="data/NS-merged")
-    p.add_argument("--test-dir", default="data/NS-merged-test")
+    p.add_argument("--train-dir", default="data/newtonian/train")
+    p.add_argument("--test-dir", default="data/newtonian/test")
     p.add_argument("--config", default="configs/cylinder-forward.yaml")
     p.add_argument("--t-initial-label", type=float, default=0.2,
                    help="Time label of the initial snapshot (first matching column is used).")

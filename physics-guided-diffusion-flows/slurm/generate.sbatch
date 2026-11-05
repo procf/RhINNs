@@ -11,8 +11,8 @@
 # Physics-guided sampling for one test case.
 # Usage:  sbatch slurm/generate.sbatch <cylinder|oldroyd> [extra options for the generator]
 # Examples:
-#   sbatch slurm/generate.sbatch cylinder --datapath data/NS-merged-test/u0_0p32137.npy --zeta-obs-a 100 --seed 1
-#   sbatch slurm/generate.sbatch oldroyd  --datapath data/Oldroyd-merged-test/Wi_0p9993.npy --seed 2
+#   sbatch slurm/generate.sbatch cylinder --datapath data/newtonian/test/u0_0p32137.npy --zeta-obs-a 100 --seed 1
+#   sbatch slurm/generate.sbatch oldroyd  --datapath data/oldroyd/test/Wi_0p9993.npy --seed 2
 # Edit the partition, modules and environment name for your cluster.
 
 set -euo pipefail

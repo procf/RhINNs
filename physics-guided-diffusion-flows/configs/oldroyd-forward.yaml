@@ -3,7 +3,7 @@
 #   python -m scripts.generate_oldroyd --config configs/oldroyd-forward.yaml
 data:
   name: Oldroyd-Triangle
-  datapath: data/Oldroyd-merged-test/Wi_0p4528.npy   # one raw (un-normalized) test sample
+  datapath: data/oldroyd/test/Wi_0p4528.npy   # one raw (un-normalized) test sample
   # physical domain sampled by the 128x128 grid (for the continuity coefficient K)
   x_min: -4.0
   x_max: 0.0
